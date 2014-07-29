@@ -9,6 +9,10 @@
     <string name="camera_back_img_support">Soporte imagen camara trasera</string>
     <string name="camera_front_img_support">Soporte imagen camara frontal</string>
     <string name="camera_back_available">camaras </string>
+    <string name="camera_flash_available">Soporte Flash :</string>
+    <string name="camera_feature">Caractisticas de camara:</string>
+    <string name="camera_all_feature">Disponible: \'%s\'</string>
+    <string name="flash_available">estatus: \'%s\'</string>
     <string name="number_cams"> numero disponibles: \'%s\'</string>
 	<string name="internal_storage">Almacenamiento Interno</string>
 	<string name="battery_level">Batería</string>

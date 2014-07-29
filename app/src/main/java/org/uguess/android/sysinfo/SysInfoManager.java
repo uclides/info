@@ -1063,6 +1063,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 
         return null;
     }
+
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     private int getNumberCamera(){
         int camcount;
@@ -1071,6 +1072,44 @@ public final class SysInfoManager extends ListFragment implements Constants
         camcount=Camera.getNumberOfCameras();
         return camcount;
     }
+
+    private boolean getAvailableFlash(){
+        if(PackageManager.FEATURE_CAMERA_FLASH!=null){
+            return true;
+        }
+        return false;
+    }
+
+    private String[] getAvailableFeatureCamera(){
+        Camera camera = Camera.open();
+        if(camera!=null) {
+            try {
+                android.hardware.Camera.Parameters parameters = camera.getParameters();
+                List<String> values = parameters.getSupportedFocusModes();
+/*                List<String> valuessupport = new ArrayList<String>();
+
+
+                for (int i = 0; i < values.size(); i++) {
+                    String strSize = String.valueOf(i) + " : "
+                            + String.valueOf(values.get(i).height)
+                            + " x "
+                            + String.valueOf(values.get(i).width);
+                    valuessupport.add(strSize);
+                }
+                camera.release();
+                Log.i("#######################################", String.valueOf(valuessupport));*/
+                String[] stringList = values.toArray(new String[values.size()]);
+                return stringList;
+            }
+            catch(RuntimeException e){
+                e.printStackTrace();
+            }
+        }
+
+
+        return null;
+    }
+
 	/**
 	 * This checks the built-in app2sd storage info supported since Froyo
 	 */
@@ -1761,7 +1800,22 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                 }
             }
             sb.append( "\n\n" ); //$NON-NLS-1$
+///////////////////////////////////////////////////////7
+/*          sb.append( "* " ) //$NON-NLS-1$
+                    .append( getString( R.string.camera_feature_back ) )
+                    .append( "\n\t" ); //$NON-NLS-1$}
 
+            String []info3=getAvailableFeatureCamera();
+            if(info3==null){
+                sb.append( getString( R.string.info_not_available ) );
+            }
+            else{
+                for(int i=0;i<info3.length;i++) {
+                    sb.append(getString(R.string.camera_feature_back_available,
+                            info3[i])).append("\n");
+                }
+            }
+            sb.append( "\n\n" ); //$NON-NLS-1$*/
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_front_img_support ) )
                     .append("\n\t"); //$NON-NLS-1$
@@ -1781,6 +1835,22 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                 }
             }
             sb.append( "\n\n" ); //$NON-NLS-1$
+
+          sb.append( "* " ) //$NON-NLS-1$
+                    .append( getString( R.string.camera_feature ) )
+                    .append( "\n\t" ); //$NON-NLS-1$}
+
+            info2=getAvailableFeatureCamera();
+            if(info2==null){
+                sb.append( getString( R.string.info_not_available ) );
+            }
+            else{
+                for(int i=0;i<info2.length;i++) {
+                    sb.append(getString(R.string.camera_all_feature,
+                            info2[i])).append("\n");
+                }
+            }
+            sb.append( "\n\n" ); //$NON-NLS-1$*/
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_back_available ) )
                     .append( "\n\t" ); //$NON-NLS-1$
@@ -1797,7 +1867,20 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
             }
             sb.append( "\n\n" ); //$NON-NLS-1$
 
-			sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "* " ) //$NON-NLS-1$
+                    .append( getString( R.string.camera_flash_available ) )
+                    .append( "\n\t" ); //$NON-NLS-1$}
+
+            boolean flash=getAvailableFlash();
+            if(flash==false){
+                sb.append( getString( R.string.info_not_available ) );
+            }
+            else{
+                sb.append( getString( R.string.flash_available,
+                        flash ) );
+            }
+
+            sb.append( "\n\n" ); //$NON-NLS-1$
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.internal_storage ) )
