@@ -2,22 +2,10 @@
 <pre-dex-items>
 
     <item
-        dex="C:\Users\Uclides Gil\Documents\ANDROID\info\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-0f4d563c4ebc254c747894075c1df85aa226c9eb.jar"
-        jar="C:\Users\Uclides Gil\Documents\ANDROID\info\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        dex="C:\Users\Uclides\Desktop\siragon\info\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-753f5a6ede693eccc2c61c5299eadc0bc3be23c4.jar"
+        jar="C:\Users\Uclides\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
-    <item
-        dex="C:\Users\Uclides Gil\Documents\ANDROID\info\app\build\intermediates\pre-dexed\debug\classes-bbfdf63dc3004328c52a3606fd1bfe6b537a8a13.jar"
-        jar="C:\Users\Uclides Gil\Documents\ANDROID\info\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
-    <item
-        dex="C:\Users\Uclides Gil\Documents\ANDROID\info\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-cdeaec25e0323b8036736f30ead4a3c2483bb4cc.jar"
-        jar="C:\Users\Uclides Gil\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
 
 </pre-dex-items>

@@ -1035,6 +1035,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 
     @TargetApi(Build.VERSION_CODES.ECLAIR)
     private String[] getSupportedPreviewSizes(int cam){
+        float mp = 0,temp;int height,width;
         Camera camera = Camera.open(cam);
         if(camera!=null) {
             try {
@@ -1049,6 +1050,24 @@ public final class SysInfoManager extends ListFragment implements Constants
                             + " x "
                             + String.valueOf(values.get(i).width);
                     valuessupport.add(strSize);
+                    if(i==0){
+                        height=Integer.parseInt(String.valueOf(values.get(i).height));
+                        width=Integer.parseInt(String.valueOf(values.get(i).width));
+                        temp=((height*width)/1024000);
+                        mp=temp;
+
+                    }
+                    else {
+                        height = Integer.parseInt(String.valueOf(values.get(i).height));
+                        width = Integer.parseInt(String.valueOf(values.get(i).width));
+                        temp = ((height * width) / 1024000);
+                        if(temp > mp){
+                            mp = temp;
+                        }
+                        if(i==values.size()-1){
+                            valuessupport.add(String.valueOf(mp)+" Megapixels");
+                        }
+                    }
                 }
                 camera.release();
                 Log.i("#######################################", String.valueOf(valuessupport));
