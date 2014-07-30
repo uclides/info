@@ -37,6 +37,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
+import android.graphics.Point;
 import android.hardware.Camera;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -60,9 +61,11 @@ import android.text.Html;
 import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.text.method.LinkMovementMethod;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Display;
 import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -73,6 +76,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -92,6 +96,7 @@ import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -1035,7 +1040,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 
     @TargetApi(Build.VERSION_CODES.ECLAIR)
     private String[] getSupportedPreviewSizes(int cam){
-        float mp = 0,temp;int height,width;
+        float mp = 0,temp,height,width;
         Camera camera = Camera.open(cam);
         if(camera!=null) {
             try {
@@ -1051,15 +1056,15 @@ public final class SysInfoManager extends ListFragment implements Constants
                             + String.valueOf(values.get(i).width);
                     valuessupport.add(strSize);
                     if(i==0){
-                        height=Integer.parseInt(String.valueOf(values.get(i).height));
-                        width=Integer.parseInt(String.valueOf(values.get(i).width));
+                        height=Float.parseFloat(String.valueOf(values.get(i).height));
+                        width=Float.parseFloat(String.valueOf(values.get(i).width));
                         temp=((height*width)/1024000);
                         mp=temp;
 
                     }
                     else {
-                        height = Integer.parseInt(String.valueOf(values.get(i).height));
-                        width = Integer.parseInt(String.valueOf(values.get(i).width));
+                        height = Float.parseFloat(String.valueOf(values.get(i).height));
+                        width = Float.parseFloat(String.valueOf(values.get(i).width));
                         temp = ((height * width) / 1024000);
                         if(temp > mp){
                             mp = temp;
@@ -1083,6 +1088,53 @@ public final class SysInfoManager extends ListFragment implements Constants
         return null;
     }
 
+    private String[] getSupportedPreviewSizesVideo(int cam){
+        float mp = 0,temp,height,width;
+        Camera camera = Camera.open(cam);
+        if(camera!=null) {
+            try {
+                android.hardware.Camera.Parameters parameters = camera.getParameters();
+                List<Camera.Size> values = parameters.getSupportedVideoSizes();
+                List<String> valuessupport = new ArrayList<String>();
+
+                for (int i = 0; i < values.size(); i++) {
+                    String strSize = String.valueOf(i) + " : "
+                            + String.valueOf(values.get(i).height)
+                            + " x "
+                            + String.valueOf(values.get(i).width);
+                    valuessupport.add(strSize);
+                    if(i==0){
+                        height=Float.parseFloat(String.valueOf(values.get(i).height));
+                        width=Float.parseFloat(String.valueOf(values.get(i).width));
+                        temp=((height*width)/1024000);
+                        mp=temp;
+
+                    }
+                    else {
+                        height = Float.parseFloat(String.valueOf(values.get(i).height));
+                        width = Float.parseFloat(String.valueOf(values.get(i).width));
+                        temp = ((height * width) / 1024000);
+                        if(temp > mp){
+                            mp = temp;
+                        }
+                        if(i==values.size()-1){
+                            //valuessupport.add(String.valueOf(mp)+" Megapixels");
+                        }
+                    }
+                }
+                camera.release();
+                Log.i("#######################################", String.valueOf(valuessupport));
+                String[] stringList = valuessupport.toArray(new String[valuessupport.size()]);
+                return stringList;
+            }
+            catch(RuntimeException e){
+                e.printStackTrace();
+            }
+        }
+
+
+        return null;
+    }
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     private int getNumberCamera(){
         int camcount;
@@ -1090,6 +1142,40 @@ public final class SysInfoManager extends ListFragment implements Constants
         Camera.CameraInfo cameraInfo=new CameraInfo();
         camcount=Camera.getNumberOfCameras();
         return camcount;
+    }
+
+    private String[] getSupportedOtherCamera(int cam){
+        Camera camera = Camera.open(cam);
+        if(camera!=null) {
+            try {
+                String[] stringList=new String[7];
+                android.hardware.Camera.Parameters parameters = camera.getParameters();
+                String values = "Focus mode: "+parameters.getFocusMode();
+                stringList[0]=values;
+                values = "Max Num Focus Areas: "+parameters.getMaxNumFocusAreas();
+                stringList[1]=values;
+                values = "Whitebalance Values: "+parameters.getSupportedWhiteBalance();
+                stringList[2]=values;
+                values = "Scene mode Values: "+parameters.getSupportedSceneModes();
+                stringList[3]=values;
+                values = "Effects Values: "+parameters.getSupportedColorEffects();
+                stringList[4]=values;
+                values = "Stabilization Video: "+parameters.getVideoStabilization();
+                stringList[4]=values;
+                values = "Quality JPEG: "+parameters.getJpegQuality();
+                stringList[5]=values;
+                values = "Quality Thumbnail: "+parameters.getJpegThumbnailQuality();
+                stringList[6]=values;
+                camera.release();
+                return stringList;
+            }
+            catch(RuntimeException e){
+                e.printStackTrace();
+            }
+        }
+
+
+        return null;
     }
 
     private boolean getAvailableFlash(){
@@ -1129,6 +1215,30 @@ public final class SysInfoManager extends ListFragment implements Constants
         return null;
     }
 
+    private String[] getInfoDisplay(){
+        String[] display=new String[5];
+        Display displayscreen=getActivity().getWindowManager().getDefaultDisplay();
+        DisplayMetrics displayMetrics=new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        Point size = new Point();
+        displayscreen.getSize(size);
+        int width = size.x;
+        int height = size.y;
+        double x = Math.pow(width/displayMetrics.xdpi, 2);
+        double y = Math.pow(height/displayMetrics.ydpi, 2);
+        double tmpinch = Math.sqrt(x + y);
+        double inches=Math.round(tmpinch*100);
+        tmpinch=inches/100;
+        Display display2 = ((WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+        float refreshRating = display2.getRefreshRate();
+        display[0] = String.valueOf("height: "+displayMetrics.heightPixels);
+        display[1] = String.valueOf("width: "+displayMetrics.widthPixels);
+        display[2]= String.valueOf("density: "+displayMetrics.densityDpi+" dpi");
+        display[3]= String.valueOf("Physical size: "+tmpinch+'"');
+        display[4]= String.valueOf("refresh rate: "+refreshRating+'"');
+
+        return display;
+    }
 	/**
 	 * This checks the built-in app2sd storage info supported since Froyo
 	 */
@@ -1801,10 +1911,29 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
             sb.append( "\n\n" ); //$NON-NLS-1$
 
             sb.append( "* " ) //$NON-NLS-1$
+                    .append( getString( R.string.display ) )
+                    .append("\n\t"); //$NON-NLS-1$
+
+            String[] info2 = getInfoDisplay();
+
+            if ( info2 == null )
+            {
+                sb.append(getString(R.string.info_not_available));
+
+            }
+            else
+            {
+                for(int i=0;i<info2.length;i++) {
+                    sb.append(getString(R.string.info_display,
+                            info2[i])).append("\n");
+                }
+            }
+            sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_back_img_support ) )
                     .append("\n\t"); //$NON-NLS-1$
 
-            String[] info2 = getSupportedPreviewSizes(0);
+             info2 = getSupportedPreviewSizes(0);
 
             if ( info2 == null )
             {
@@ -1819,22 +1948,45 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                 }
             }
             sb.append( "\n\n" ); //$NON-NLS-1$
-///////////////////////////////////////////////////////7
-/*          sb.append( "* " ) //$NON-NLS-1$
-                    .append( getString( R.string.camera_feature_back ) )
-                    .append( "\n\t" ); //$NON-NLS-1$}
+            sb.append( "* " ) //$NON-NLS-1$
+                    .append( getString( R.string.camera_back_vid_support ) )
+                    .append("\n\t"); //$NON-NLS-1$
 
-            String []info3=getAvailableFeatureCamera();
-            if(info3==null){
-                sb.append( getString( R.string.info_not_available ) );
+            info2 = getSupportedPreviewSizesVideo(0);
+
+            if ( info2 == null )
+            {
+                sb.append(getString(R.string.info_not_available));
+
             }
-            else{
-                for(int i=0;i<info3.length;i++) {
-                    sb.append(getString(R.string.camera_feature_back_available,
-                            info3[i])).append("\n");
+            else
+            {
+                for(int i=0;i<info2.length;i++) {
+                    sb.append(getString(R.string.support_video_back,
+                            info2[i])).append("\n");
                 }
             }
-            sb.append( "\n\n" ); //$NON-NLS-1$*/
+            sb.append( "\n\n" ); //$NON-NLS-1$
+//////////////////////////////////////////////////////////////////////////////////
+            sb.append( "* " ) //$NON-NLS-1$
+                    .append( getString( R.string.camera_other_feature ) )
+                    .append("\n\t"); //$NON-NLS-1$
+
+            info2 = getSupportedOtherCamera(0);
+
+            if ( info2 == null )
+            {
+                sb.append(getString(R.string.info_not_available));
+
+            }
+            else
+            {
+                for(int i=0;i<info2.length;i++) {
+                    sb.append(getString(R.string.camera_des_feature,
+                            info2[i])).append("\n");
+                }
+            }
+            sb.append( "\n\n" ); //$NON-NLS-1$
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_front_img_support ) )
                     .append("\n\t"); //$NON-NLS-1$
@@ -1854,7 +2006,25 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                 }
             }
             sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "* " ) //$NON-NLS-1$
+                    .append( getString( R.string.camera_front_vid_support ) )
+                    .append("\n\t"); //$NON-NLS-1$
 
+            info2 = getSupportedPreviewSizesVideo(1);
+
+            if ( info2 == null )
+            {
+                sb.append(getString(R.string.info_not_available));
+
+            }
+            else
+            {
+                for(int i=0;i<info2.length;i++) {
+                    sb.append(getString(R.string.support_video_front,
+                            info2[i])).append("\n");
+                }
+            }
+            sb.append( "\n\n" ); //$NON-NLS-1$
           sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_feature ) )
                     .append( "\n\t" ); //$NON-NLS-1$}
