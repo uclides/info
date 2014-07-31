@@ -393,7 +393,7 @@ final class Util implements Constants
 
 			PendingIntent pi = PendingIntent.getActivity( ctx, 0, it, 0 );
 
-			Notification nc = new Notification( R.drawable.icon,
+			Notification nc = new Notification( R.drawable.logo2,
 					null,
 					System.currentTimeMillis( ) );
 
@@ -421,7 +421,7 @@ final class Util implements Constants
 
 			PendingIntent pi = PendingIntent.getService( ctx, 0, it, 0 );
 
-			Notification nc = new Notification( R.drawable.end,
+			Notification nc = new Notification( R.drawable.logo2,
 					null,
 					System.currentTimeMillis( ) );
 

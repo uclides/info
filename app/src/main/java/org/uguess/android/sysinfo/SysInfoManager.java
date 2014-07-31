@@ -96,7 +96,6 @@ import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -240,7 +239,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 					sendEmptyMessage( MSG_DISMISS_PROGRESS );
 
 					Util.handleMsgSendContentReady( (String) msg.obj,
-							"Android System Report - ", //$NON-NLS-1$
+							"Siragon Android  Report - ", //$NON-NLS-1$
 							ctx,
 							msg.arg2 == 1 );
 
@@ -1748,7 +1747,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 			txt.setMovementMethod( LinkMovementMethod.getInstance( ) );
 
 			new AlertDialog.Builder( ctx ).setTitle( R.string.app_name )
-					.setIcon( R.drawable.icon_m )
+					.setIcon( R.drawable.logo2 )
 					.setView( sv )
 					.setNegativeButton( R.string.close, null )
 					.create( )
@@ -3489,8 +3488,8 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
             refreshServer();
 			refreshEmail( );
 			refreshTab( );
-			refreshBooleanOption( PREF_KEY_SHOW_INFO_ICON, true );
-			refreshBooleanOption( PREF_KEY_SHOW_TASK_ICON, true );
+			refreshBooleanOption( PREF_KEY_SHOW_INFO_ICON, false );
+			refreshBooleanOption( PREF_KEY_SHOW_TASK_ICON, false );
 			refreshBooleanOption( PREF_KEY_AUTO_START_ICON, false );
 
 			setResult( RESULT_OK, getIntent( ) );
@@ -3567,7 +3566,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 				Util.updateInfoIcon( this, enabled );
 
-				return true;
+				return false;
 			}
 			else if ( PREF_KEY_SHOW_TASK_ICON.equals( preference.getKey( ) ) )
 			{
@@ -3577,14 +3576,14 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 				Util.updateTaskIcon( this, enabled );
 
-				return true;
+				return false;
 			}
 			else if ( PREF_KEY_AUTO_START_ICON.equals( preference.getKey( ) ) )
 			{
 				it.putExtra( PREF_KEY_AUTO_START_ICON,
 						( (CheckBoxPreference) findPreference( PREF_KEY_AUTO_START_ICON ) ).isChecked( ) );
 
-				return true;
+				return false;
 			}
 			else if ( PREF_KEY_DEFAULT_EMAIL.equals( preference.getKey( ) ) )
 			{

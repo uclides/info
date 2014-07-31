@@ -512,7 +512,7 @@ public final class QSystemInfo extends FragmentActivity
 
 			PendingIntent pi = PendingIntent.getActivity( ctx, 0, it, 0 );
 
-			Notification nc = new Notification( R.drawable.icon, "Oops", //$NON-NLS-1$
+			Notification nc = new Notification( R.drawable.logo2, "error", //$NON-NLS-1$
 					System.currentTimeMillis( ) );
 
 			nc.flags |= Notification.FLAG_AUTO_CANCEL;
