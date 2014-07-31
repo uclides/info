@@ -247,6 +247,8 @@
     <string name="show_info_icon_sum">Muestra Siragon en el área de notificaciones</string>
     <string name="auto_start">Inicio Automático</string>
     <string name="show_task_icon">Mostrar Task Killer</string>
+    <string name="opengl">Informacion OpenGL:</string>
+    <string name="values_opengl">Renderer: \'%s\'</string>
     <string name="show_info_icon">Mostrar Siragon</string>
     <string name="task_icon_hint">Pulsar para finalizar todas las tareas en ejecución.</string>
     <string name="info_icon_hint">Pulsar para mostrar síragon.</string>

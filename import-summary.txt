@@ -1,4 +1,4 @@
-ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+SIRAGON PROJECT IMPORT SUMMARY
 ======================================
 
 Ignored Files:

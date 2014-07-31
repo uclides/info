@@ -1,5 +1,5 @@
 /********************************************************************************
- * (C) Copyright 2000-2010, by Shawn Qualia.
+ * (C) Copyright 2000-2010.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,6 +44,8 @@ import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.opengl.GLES10;
+import android.opengl.GLES20;
 import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -55,6 +57,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.provider.MediaStore;
 import android.support.v4.app.ListFragment;
 import android.text.ClipboardManager;
 import android.text.Html;
@@ -104,6 +107,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map.Entry;
+
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.opengles.GL10;
+import javax.microedition.khronos.opengles.GL10Ext;
+import javax.microedition.khronos.opengles.GL11;
 
 import static android.hardware.Camera.*;
 
@@ -175,6 +183,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 	private static final int WIDGET_BAR = 0;
 	private static final int WIDGET_INFO = 1;
 	private static final int WIDGET_TASK = 2;
+
 
 	ProgressDialog progress;
 
@@ -336,6 +345,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 			prefs.put( KEY_MORE_INFO, new PrefItem( KEY_MORE_INFO,
 					getString( R.string.more_info ) ) );
 		}
+
 	}
 
 	@Override
@@ -1214,6 +1224,7 @@ public final class SysInfoManager extends ListFragment implements Constants
         return null;
     }
 
+
     private String[] getInfoDisplay(){
         String[] display=new String[5];
         Display displayscreen=getActivity().getWindowManager().getDefaultDisplay();
@@ -1238,6 +1249,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 
         return display;
     }
+
 	/**
 	 * This checks the built-in app2sd storage info supported since Froyo
 	 */
@@ -2069,6 +2081,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
             }
 
             sb.append( "\n\n" ); //$NON-NLS-1$
+//////////////////////////////////////////////////////////////////////////////////////7
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.internal_storage ) )
@@ -2077,7 +2090,8 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			info = getInternalStorageInfo( );
 			if ( info == null )
 			{
-				sb.append( getString( R.string.info_not_available ) );
+				sb.append( getString( R.string
+                        .info_not_available ) );
 			}
 			else
 			{
