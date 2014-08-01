@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import org.uguess.android.sysinfo.SysInfoManager.PopActivity;
+import org.uguess.android.sysinfo.SiragonManager.PopActivity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -90,7 +90,7 @@ public final class CpuInfoActivity extends PopActivity
 	{
 		ArrayList<String[]> data = new ArrayList<String[]>( );
 
-		String[] stat = SysInfoManager.getCpuState( );
+		String[] stat = SiragonManager.getCpuState();
 
 		if ( stat != null && stat.length == 2 )
 		{

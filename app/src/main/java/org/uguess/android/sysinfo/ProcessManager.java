@@ -1065,7 +1065,7 @@ public final class ProcessManager extends ListFragment implements Constants
 		{
 			txt_head_mem.setVisibility( View.VISIBLE );
 
-			long[] mem = SysInfoManager.getMemState( ctx );
+			long[] mem = SiragonManager.getMemState(ctx);
 
 			if ( mem != null )
 			{

@@ -20,7 +20,7 @@ package org.uguess.android.sysinfo;
 import java.util.ArrayList;
 
 import org.uguess.android.sysinfo.NetStateManager.IpInfo;
-import org.uguess.android.sysinfo.SysInfoManager.PopActivity;
+import org.uguess.android.sysinfo.SiragonManager.PopActivity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -249,7 +249,7 @@ public final class NetworkInfoActivity extends PopActivity
 			} );
 		}
 
-		String localAddress = SysInfoManager.getNetAddressInfo( );
+		String localAddress = SiragonManager.getNetAddressInfo();
 
 		data.add( new String[]{
 				getString( R.string.local_address ),

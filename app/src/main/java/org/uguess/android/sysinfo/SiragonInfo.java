@@ -55,7 +55,7 @@ import java.util.Date;
 /**
  * QSystemInfo
  */
-public final class QSystemInfo extends FragmentActivity
+public final class SiragonInfo extends FragmentActivity
 {
 
 	private static final String PREF_KEY_LAST_ACTIVE = "last_active_tab"; //$NON-NLS-1$
@@ -153,10 +153,10 @@ public final class QSystemInfo extends FragmentActivity
 			tabContainer = new TabsAdapter( this, th, vp );
 		}
 
-		tabContainer.addTab( th.newTabSpec( SysInfoManager.class.getName( ) )
+		tabContainer.addTab( th.newTabSpec( SiragonManager.class.getName( ) )
 				.setIndicator( getString( R.string.tab_info ),
 						getResources( ).getDrawable( R.drawable.info ) ),
-				SysInfoManager.class,
+				SiragonManager.class,
 				null );
 
 		tabContainer.addTab( th.newTabSpec( ApplicationManager.class.getName( ) )
@@ -177,7 +177,7 @@ public final class QSystemInfo extends FragmentActivity
 				NetStateManager.class,
 				null );
 
-		SharedPreferences sp = getSharedPreferences( SysInfoManager.PSTORE_SYSINFOMANAGER,
+		SharedPreferences sp = getSharedPreferences( SiragonManager.PSTORE_SYSINFOMANAGER,
 				Context.MODE_PRIVATE );
 
 		fixTextView( th );
@@ -186,7 +186,7 @@ public final class QSystemInfo extends FragmentActivity
 
 		if ( sp != null )
 		{
-			int tab = sp.getInt( SysInfoManager.PREF_KEY_DEFAULT_TAB, 0 );
+			int tab = sp.getInt( SiragonManager.PREF_KEY_DEFAULT_TAB, 0 );
 
 			if ( tab == 0 )
 			{
@@ -203,12 +203,12 @@ public final class QSystemInfo extends FragmentActivity
 	@Override
 	protected void onDestroy( )
 	{
-		SharedPreferences sp = getSharedPreferences( SysInfoManager.PSTORE_SYSINFOMANAGER,
+		SharedPreferences sp = getSharedPreferences( SiragonManager.PSTORE_SYSINFOMANAGER,
 				Context.MODE_PRIVATE );
 
 		if ( sp != null )
 		{
-			int tab = sp.getInt( SysInfoManager.PREF_KEY_DEFAULT_TAB, 0 );
+			int tab = sp.getInt( SiragonManager.PREF_KEY_DEFAULT_TAB, 0 );
 
 			if ( tab == 0 )
 			{
@@ -344,7 +344,7 @@ public final class QSystemInfo extends FragmentActivity
 			}
 			catch ( Exception e )
 			{
-				Log.e( QSystemInfo.class.getName( ),
+				Log.e( SiragonInfo.class.getName( ),
 						e.getLocalizedMessage( ),
 						e );
 			}
@@ -377,7 +377,7 @@ public final class QSystemInfo extends FragmentActivity
 			}
 			catch ( Exception e )
 			{
-				Log.e( QSystemInfo.class.getName( ),
+				Log.e( SiragonInfo.class.getName( ),
 						e.getLocalizedMessage( ),
 						e );
 			}
@@ -583,7 +583,7 @@ public final class QSystemInfo extends FragmentActivity
 
 				it.putExtra( Intent.EXTRA_SUBJECT, title );
 
-				SysInfoManager.createTextHeader( this, msg, title );
+				SiragonManager.createTextHeader(this, msg, title);
 
 				msg.append( "\n-----THREAD-----\n" ) //$NON-NLS-1$
 						.append( getIntent( ).getStringExtra( "thread" ) ); //$NON-NLS-1$
@@ -599,7 +599,7 @@ public final class QSystemInfo extends FragmentActivity
 				Process proc = Runtime.getRuntime( )
 						.exec( "logcat -d -v time *:V" ); //$NON-NLS-1$
 
-				SysInfoManager.readRawText( msg, proc.getInputStream( ) );
+				SiragonManager.readRawText(msg, proc.getInputStream());
 
 				msg.append( "\n-----LOGCAT-END-----\n" ); //$NON-NLS-1$
 			}
@@ -664,11 +664,11 @@ public final class QSystemInfo extends FragmentActivity
 		@Override
 		public void onReceive( Context context, Intent intent )
 		{
-			SharedPreferences sp = context.getSharedPreferences( SysInfoManager.PSTORE_SYSINFOMANAGER,
+			SharedPreferences sp = context.getSharedPreferences( SiragonManager.PSTORE_SYSINFOMANAGER,
 					Context.MODE_PRIVATE );
 
 			if ( sp != null
-					&& sp.getBoolean( SysInfoManager.PREF_KEY_AUTO_START_ICON,
+					&& sp.getBoolean( SiragonManager.PREF_KEY_AUTO_START_ICON,
 							false ) )
 			{
 				Util.updateIcons( context, sp );

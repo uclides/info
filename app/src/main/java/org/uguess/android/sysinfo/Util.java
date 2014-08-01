@@ -43,7 +43,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.uguess.android.sysinfo.QSystemInfo.ErrorHandler;
+import org.uguess.android.sysinfo.SiragonInfo.ErrorHandler;
 import org.uguess.android.sysinfo.WidgetProvider.EndTaskService;
 
 import java.io.BufferedOutputStream;
@@ -371,12 +371,12 @@ final class Util implements Constants
 			return;
 		}
 
-		if ( sp.getBoolean( SysInfoManager.PREF_KEY_SHOW_INFO_ICON, true ) )
+		if ( sp.getBoolean( SiragonManager.PREF_KEY_SHOW_INFO_ICON, true ) )
 		{
 			updateInfoIcon( ctx, true );
 		}
 
-		if ( sp.getBoolean( SysInfoManager.PREF_KEY_SHOW_TASK_ICON, true ) )
+		if ( sp.getBoolean( SiragonManager.PREF_KEY_SHOW_TASK_ICON, true ) )
 		{
 			updateTaskIcon( ctx, true );
 		}
@@ -386,7 +386,7 @@ final class Util implements Constants
 	{
 		if ( enable )
 		{
-			Intent it = new Intent( ctx, QSystemInfo.class );
+			Intent it = new Intent( ctx, SiragonInfo.class );
 			it.setFlags( it.getFlags( )
 					| Intent.FLAG_ACTIVITY_NEW_TASK
 					| Intent.FLAG_ACTIVITY_CLEAR_TOP );
@@ -482,14 +482,14 @@ final class Util implements Constants
 		}
 		else
 		{
-			SharedPreferences sp = ctx.getSharedPreferences( SysInfoManager.class.getSimpleName( ),
+			SharedPreferences sp = ctx.getSharedPreferences( SiragonManager.class.getSimpleName( ),
 					Context.MODE_PRIVATE );
 
 			String email = null;
 
 			if ( sp != null )
 			{
-				email = sp.getString( SysInfoManager.PREF_KEY_DEFAULT_EMAIL,
+				email = sp.getString( SiragonManager.PREF_KEY_DEFAULT_EMAIL,
 						null );
 			}
 
@@ -505,10 +505,10 @@ final class Util implements Constants
 			final Activity context, final String content, final int format,
 			final String title )
 	{
-		Log.d( SysInfoManager.class.getName( ), "VM Max size: " //$NON-NLS-1$
+		Log.d( SiragonManager.class.getName( ), "VM Max size: " //$NON-NLS-1$
 				+ Runtime.getRuntime( ).maxMemory( ) );
 
-		Log.d( SysInfoManager.class.getName( ), "Sending content size: " //$NON-NLS-1$
+		Log.d( SiragonManager.class.getName( ), "Sending content size: " //$NON-NLS-1$
 				+ content.length( ) );
 
 		if ( content != null && content.length( ) > 250 * 1024 )
@@ -608,7 +608,7 @@ final class Util implements Constants
 			}
 			catch ( IOException e )
 			{
-				Log.e( SysInfoManager.class.getName( ),
+				Log.e( SiragonManager.class.getName( ),
 						e.getLocalizedMessage( ),
 						e );
 			}
@@ -622,7 +622,7 @@ final class Util implements Constants
 					}
 					catch ( IOException e )
 					{
-						Log.e( SysInfoManager.class.getName( ),
+						Log.e( SiragonManager.class.getName( ),
 								e.getLocalizedMessage( ),
 								e );
 					}

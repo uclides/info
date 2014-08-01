@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import org.uguess.android.sysinfo.SysInfoManager.PopActivity;
+import org.uguess.android.sysinfo.SiragonManager.PopActivity;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.MemoryInfo;
@@ -167,12 +167,12 @@ public final class MemInfoActivity extends PopActivity
 				}
 			}
 
-			long total = SysInfoManager.extractMemCount( totalMsg );
-			long free = SysInfoManager.extractMemCount( freeMsg );
-			long buffers = SysInfoManager.extractMemCount( buffersMsg );
-			long cached = SysInfoManager.extractMemCount( cachedMsg );
-			long swapTotal = SysInfoManager.extractMemCount( swapTotalMsg );
-			long swapFree = SysInfoManager.extractMemCount( swapFreeMsg );
+			long total = SiragonManager.extractMemCount(totalMsg);
+			long free = SiragonManager.extractMemCount(freeMsg);
+			long buffers = SiragonManager.extractMemCount(buffersMsg);
+			long cached = SiragonManager.extractMemCount(cachedMsg);
+			long swapTotal = SiragonManager.extractMemCount(swapTotalMsg);
+			long swapFree = SiragonManager.extractMemCount(swapFreeMsg);
 
 			ActivityManager am = (ActivityManager) ctx.getSystemService( Context.ACTIVITY_SERVICE );
 			MemoryInfo mi = new MemoryInfo( );

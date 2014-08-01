@@ -77,7 +77,7 @@ public final class WidgetProvider extends AppWidgetProvider
 
 				if ( hasInfo )
 				{
-					Intent it = new Intent( context, QSystemInfo.class );
+					Intent it = new Intent( context, SiragonInfo.class );
 					it.setFlags( it.getFlags( )
 							| Intent.FLAG_ACTIVITY_NEW_TASK
 							| Intent.FLAG_ACTIVITY_CLEAR_TOP );

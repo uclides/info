@@ -19,7 +19,7 @@ package org.uguess.android.sysinfo;
 
 import java.util.List;
 
-import org.uguess.android.sysinfo.SysInfoManager.PopActivity;
+import org.uguess.android.sysinfo.SiragonManager.PopActivity;
 
 import android.content.Context;
 import android.hardware.Sensor;

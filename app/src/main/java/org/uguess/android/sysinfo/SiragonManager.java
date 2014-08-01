@@ -44,8 +44,6 @@ import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.opengl.GLES10;
-import android.opengl.GLES20;
 import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -57,7 +55,6 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.provider.MediaStore;
 import android.support.v4.app.ListFragment;
 import android.text.ClipboardManager;
 import android.text.Html;
@@ -108,22 +105,17 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map.Entry;
 
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
-import javax.microedition.khronos.opengles.GL10Ext;
-import javax.microedition.khronos.opengles.GL11;
-
 import static android.hardware.Camera.*;
 
 /**
  * SysInfoManager
  */
-public final class SysInfoManager extends ListFragment implements Constants
+public final class SiragonManager extends ListFragment implements Constants
 
 {
     UploadFile uploadFile=new UploadFile();
 
-	static final String PSTORE_SYSINFOMANAGER = SysInfoManager.class.getSimpleName( );
+	static final String PSTORE_SYSINFOMANAGER = SiragonManager.class.getSimpleName( );
 
 	private static final char[] CSV_SEARCH_CHARS = new char[]{
 			',', '"', '\r', '\n'
@@ -138,7 +130,8 @@ public final class SysInfoManager extends ListFragment implements Constants
 	private static final String F_VERSION = "/proc/version"; //$NON-NLS-1$
 	private static final String F_MOUNT_INFO = "/proc/mounts"; //$NON-NLS-1$
 
-	private static final String HEADER_SPLIT = "========================================================================================\n"; //$NON-NLS-1$
+	private static final String HEADER_SPLIT = "========================================================================================\n"+
+            "========================================================================================\n"; //$NON-NLS-1$
 	private static final String openFullRow = "<tr align=\"left\" valign=\"top\"><td colspan=5><small>"; //$NON-NLS-1$
 
 	static final String openHeaderRow = "<tr align=\"left\" bgcolor=\"#E0E0FF\"><td><b>"; //$NON-NLS-1$
@@ -657,7 +650,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 		}
 		catch ( Exception e )
 		{
-			Log.e( SysInfoManager.class.getName( ), e.getLocalizedMessage( ), e );
+			Log.e( SiragonManager.class.getName( ), e.getLocalizedMessage( ), e );
 		}
 		finally
 		{
@@ -669,7 +662,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 				}
 				catch ( IOException ie )
 				{
-					Log.e( SysInfoManager.class.getName( ),
+					Log.e( SiragonManager.class.getName( ),
 							ie.getLocalizedMessage( ),
 							ie );
 				}
@@ -714,7 +707,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 						}
 						else
 						{
-							Log.w( SysInfoManager.class.getName( ),
+							Log.w( SiragonManager.class.getName( ),
 									"Unexpected mem unit format: " + line ); //$NON-NLS-1$
 						}
 
@@ -722,20 +715,20 @@ public final class SysInfoManager extends ListFragment implements Constants
 					}
 					catch ( Exception e )
 					{
-						Log.e( SysInfoManager.class.getName( ),
+						Log.e( SiragonManager.class.getName( ),
 								e.getLocalizedMessage( ),
 								e );
 					}
 				}
 				else
 				{
-					Log.e( SysInfoManager.class.getName( ),
+					Log.e( SiragonManager.class.getName( ),
 							"Unexpected mem value format: " + line ); //$NON-NLS-1$
 				}
 			}
 			else
 			{
-				Log.e( SysInfoManager.class.getName( ),
+				Log.e( SiragonManager.class.getName( ),
 						"Unexpected mem format: " + line ); //$NON-NLS-1$
 			}
 		}
@@ -796,7 +789,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 				}
 				catch ( Exception e )
 				{
-					Log.e( SysInfoManager.class.getName( ),
+					Log.e( SiragonManager.class.getName( ),
 							e.getLocalizedMessage( ),
 							e );
 				}
@@ -811,7 +804,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 						}
 						catch ( IOException ie )
 						{
-							Log.e( SysInfoManager.class.getName( ),
+							Log.e( SiragonManager.class.getName( ),
 									ie.getLocalizedMessage( ),
 									ie );
 						}
@@ -820,7 +813,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 			}
 			else
 			{
-				Log.d( SysInfoManager.class.getName( ),
+				Log.d( SiragonManager.class.getName( ),
 						"No scaling found, using BogoMips instead" ); //$NON-NLS-1$
 			}
 
@@ -859,7 +852,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 				}
 				else
 				{
-					Log.e( SysInfoManager.class.getName( ),
+					Log.e( SiragonManager.class.getName( ),
 							"Unexpected processor format: " + model ); //$NON-NLS-1$
 				}
 			}
@@ -883,19 +876,19 @@ public final class SysInfoManager extends ListFragment implements Constants
 				}
 				else
 				{
-					Log.e( SysInfoManager.class.getName( ),
+					Log.e( SiragonManager.class.getName( ),
 							"Unexpected processor format: " + processor ); //$NON-NLS-1$
 				}
 			}
 			else
 			{
-				Log.e( SysInfoManager.class.getName( ),
+				Log.e( SiragonManager.class.getName( ),
 						"Incompatible cpu format" ); //$NON-NLS-1$
 			}
 		}
 		catch ( Exception e )
 		{
-			Log.e( SysInfoManager.class.getName( ), e.getLocalizedMessage( ), e );
+			Log.e( SiragonManager.class.getName( ), e.getLocalizedMessage( ), e );
 		}
 		finally
 		{
@@ -907,7 +900,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 				}
 				catch ( IOException ie )
 				{
-					Log.e( SysInfoManager.class.getName( ),
+					Log.e( SiragonManager.class.getName( ),
 							ie.getLocalizedMessage( ),
 							ie );
 				}
@@ -1010,7 +1003,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 				}
 				catch ( Exception e )
 				{
-					Log.e( SysInfoManager.class.getName( ),
+					Log.e( SiragonManager.class.getName( ),
 							e.getLocalizedMessage( ),
 							e );
 				}
@@ -1025,7 +1018,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 						}
 						catch ( IOException ie )
 						{
-							Log.e( SysInfoManager.class.getName( ),
+							Log.e( SiragonManager.class.getName( ),
 									ie.getLocalizedMessage( ),
 									ie );
 						}
@@ -1286,7 +1279,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 						}
 						catch ( Exception e )
 						{
-							Log.e( SysInfoManager.class.getName( ),
+							Log.e( SiragonManager.class.getName( ),
 									"Cannot access path: " //$NON-NLS-1$
 											+ srcFile.getAbsolutePath( ),
 									e );
@@ -1344,7 +1337,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 			}
 			catch ( Exception e )
 			{
-				Log.e( SysInfoManager.class.getName( ), "Cannot access path: " //$NON-NLS-1$
+				Log.e( SiragonManager.class.getName( ), "Cannot access path: " //$NON-NLS-1$
 						+ path.getAbsolutePath( ), e );
 			}
 		}
@@ -1392,7 +1385,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 		}
 		catch ( SocketException e )
 		{
-			Log.e( SysInfoManager.class.getName( ), e.getLocalizedMessage( ), e );
+			Log.e( SiragonManager.class.getName( ), e.getLocalizedMessage( ), e );
 		}
 
 		return null;
@@ -1564,7 +1557,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 			}
 			else
 			{
-				Log.d( SysInfoManager.class.getName( ),
+				Log.d( SiragonManager.class.getName( ),
 						"Failed to resolve activity for DeviceInfoSettings" ); //$NON-NLS-1$
 			}
 			return true;
@@ -1719,7 +1712,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 		{
 			Intent it = new Intent( Intent.ACTION_VIEW );
 
-			String target = "http://code.google.com/p/qsysinfo/wiki/FeaturesTextOnly#Introduction"; //$NON-NLS-1$
+			String target = "http://www.siragon.com.ve"; //$NON-NLS-1$
 
 			ConnectivityManager cm = (ConnectivityManager) ctx.getSystemService( Context.CONNECTIVITY_SERVICE );
 
@@ -1727,7 +1720,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 
 			if ( info != null && info.isConnected( ) )
 			{
-				target = "http://code.google.com/p/qsysinfo/wiki/Features#Introduction"; //$NON-NLS-1$
+				target = "http://www.siragon.com.ve"; //$NON-NLS-1$
 			}
 
 			it.setData( Uri.parse( target ) );
@@ -1750,7 +1743,7 @@ public final class SysInfoManager extends ListFragment implements Constants
 
 			sv.addView( txt );
 
-			String href = "http://qsysinfo.appspot.com/donate.jsp"; //$NON-NLS-1$
+			String href = "http://www.google.com.ve"; //$NON-NLS-1$
 
 			txt.setText( Html.fromHtml( getString( R.string.about_msg,
 					getVersionName( ctx.getPackageManager( ),
@@ -1878,7 +1871,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 	{
 		StringBuffer sb = new StringBuffer( );
 
-		createTextHeader( getActivity( ), sb, "Android System Report - " //$NON-NLS-1$
+		createTextHeader( getActivity( ), sb, "Android Síragon Report - I&D " //$NON-NLS-1$
 				+ new Date( ).toLocaleString( ) );
 
 		if ( items[BASIC_INFO] )
@@ -1888,7 +1881,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.sd_storage ) )
-					.append( "\n\t" ); //$NON-NLS-1$
+					.append( "\n" ); //$NON-NLS-1$
 
 			String[] info = getExternalStorageInfo( );
 			if ( info == null )
@@ -1905,7 +1898,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.a2sd_storage ) )
-            .append("\n\t"); //$NON-NLS-1$
+            .append("\n"); //$NON-NLS-1$
 			info = getA2SDStorageInfo( );
 			if ( info == null )
 			{
@@ -1923,7 +1916,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.display ) )
-                    .append("\n\t"); //$NON-NLS-1$
+                    .append("\n"); //$NON-NLS-1$
 
             String[] info2 = getInfoDisplay();
 
@@ -1942,7 +1935,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
             sb.append( "\n\n" ); //$NON-NLS-1$
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_back_img_support ) )
-                    .append("\n\t"); //$NON-NLS-1$
+                    .append("\n"); //$NON-NLS-1$
 
              info2 = getSupportedPreviewSizes(0);
 
@@ -1961,7 +1954,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
             sb.append( "\n\n" ); //$NON-NLS-1$
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_back_vid_support ) )
-                    .append("\n\t"); //$NON-NLS-1$
+                    .append("\n"); //$NON-NLS-1$
 
             info2 = getSupportedPreviewSizesVideo(0);
 
@@ -1981,7 +1974,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 //////////////////////////////////////////////////////////////////////////////////
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_other_feature ) )
-                    .append("\n\t"); //$NON-NLS-1$
+                    .append("\n"); //$NON-NLS-1$
 
             info2 = getSupportedOtherCamera(0);
 
@@ -2000,7 +1993,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
             sb.append( "\n\n" ); //$NON-NLS-1$
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_front_img_support ) )
-                    .append("\n\t"); //$NON-NLS-1$
+                    .append("\n"); //$NON-NLS-1$
 
              info2 = getSupportedPreviewSizes(1);
 
@@ -2019,7 +2012,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
             sb.append( "\n\n" ); //$NON-NLS-1$
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_front_vid_support ) )
-                    .append("\n\t"); //$NON-NLS-1$
+                    .append("\n"); //$NON-NLS-1$
 
             info2 = getSupportedPreviewSizesVideo(1);
 
@@ -2038,7 +2031,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
             sb.append( "\n\n" ); //$NON-NLS-1$
           sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_feature ) )
-                    .append( "\n\t" ); //$NON-NLS-1$}
+                    .append( "\n" ); //$NON-NLS-1$}
 
             info2=getAvailableFeatureCamera();
             if(info2==null){
@@ -2053,7 +2046,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
             sb.append( "\n\n" ); //$NON-NLS-1$*/
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_back_available ) )
-                    .append( "\n\t" ); //$NON-NLS-1$
+                    .append( "\n" ); //$NON-NLS-1$
 
             int cams = getNumberCamera( );
             if ( cams == 0 )
@@ -2069,7 +2062,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_flash_available ) )
-                    .append( "\n\t" ); //$NON-NLS-1$}
+                    .append( "\n" ); //$NON-NLS-1$}
 
             boolean flash=getAvailableFlash();
             if(flash==false){
@@ -2085,7 +2078,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.internal_storage ) )
-					.append( "\n\t" ); //$NON-NLS-1$
+					.append( "\n" ); //$NON-NLS-1$
 
 			info = getInternalStorageInfo( );
 			if ( info == null )
@@ -2103,7 +2096,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.system_storage ) )
-					.append( "\n\t" ); //$NON-NLS-1$
+					.append("\n"); //$NON-NLS-1$
 
 			info = getSystemStorageInfo( );
 			if ( info == null )
@@ -2120,7 +2113,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.cache_storage ) )
-					.append( "\n\t" ); //$NON-NLS-1$
+					.append("\n"); //$NON-NLS-1$
 
 			info = getCacheStorageInfo( );
 			if ( info == null )
@@ -2137,7 +2130,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.memory ) )
-					.append( "\n\t" ); //$NON-NLS-1$
+					.append("\n"); //$NON-NLS-1$
 
 			info = getMemInfo( );
 			if ( info == null )
@@ -2154,17 +2147,17 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.processor ) )
-					.append( "\n\t" ) //$NON-NLS-1$
-					.append( getCpuInfo( ) )
+					.append("\n") //$NON-NLS-1$
+					.append( getCpuInfo() )
 					.append( "\n\n" ); //$NON-NLS-1$
 
 			String nInfo = getNetAddressInfo( );
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.net_address ) )
-					.append( "\n\t" ) //$NON-NLS-1$
+					.append( "\n" ) //$NON-NLS-1$
 					.append( nInfo == null ? getString( R.string.info_not_available )
 							: nInfo )
-					.append( "\n\n" ); //$NON-NLS-1$
+					.append("\n\n"); //$NON-NLS-1$
 
 			sb.append( '\n' );
 
@@ -2226,7 +2219,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			}
 			catch ( Exception e )
 			{
-				Log.e( SysInfoManager.class.getName( ),
+				Log.e( SiragonManager.class.getName( ),
 						e.getLocalizedMessage( ),
 						e );
 			}
@@ -2338,7 +2331,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			}
 			catch ( Exception e )
 			{
-				Log.e( SysInfoManager.class.getName( ),
+				Log.e( SiragonManager.class.getName( ),
 						e.getLocalizedMessage( ),
 						e );
 			}
@@ -2359,7 +2352,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			}
 			catch ( Exception e )
 			{
-				Log.e( SysInfoManager.class.getName( ),
+				Log.e( SiragonManager.class.getName( ),
 						e.getLocalizedMessage( ),
 						e );
 			}
@@ -2381,7 +2374,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			}
 			catch ( Exception e )
 			{
-				Log.e( SysInfoManager.class.getName( ),
+				Log.e( SiragonManager.class.getName( ),
 						e.getLocalizedMessage( ),
 						e );
 			}
@@ -2612,7 +2605,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			}
 			catch ( Exception e )
 			{
-				Log.e( SysInfoManager.class.getName( ),
+				Log.e( SiragonManager.class.getName( ),
 						e.getLocalizedMessage( ),
 						e );
 			}
@@ -2766,7 +2759,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			}
 			catch ( Exception e )
 			{
-				Log.e( SysInfoManager.class.getName( ),
+				Log.e( SiragonManager.class.getName( ),
 						e.getLocalizedMessage( ),
 						e );
 			}
@@ -2787,7 +2780,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			}
 			catch ( Exception e )
 			{
-				Log.e( SysInfoManager.class.getName( ),
+				Log.e( SiragonManager.class.getName( ),
 						e.getLocalizedMessage( ),
 						e );
 			}
@@ -2809,7 +2802,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			}
 			catch ( Exception e )
 			{
-				Log.e( SysInfoManager.class.getName( ),
+				Log.e( SiragonManager.class.getName( ),
 						e.getLocalizedMessage( ),
 						e );
 			}
@@ -2863,7 +2856,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 		}
 		catch ( Exception e )
 		{
-			Log.e( SysInfoManager.class.getName( ), e.getLocalizedMessage( ), e );
+			Log.e( SiragonManager.class.getName( ), e.getLocalizedMessage( ), e );
 		}
 		finally
 		{
@@ -2875,7 +2868,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 				}
 				catch ( IOException e )
 				{
-					Log.e( SysInfoManager.class.getName( ),
+					Log.e( SiragonManager.class.getName( ),
 							e.getLocalizedMessage( ),
 							e );
 				}
@@ -2907,7 +2900,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 		}
 		catch ( Exception e )
 		{
-			Log.e( SysInfoManager.class.getName( ), e.getLocalizedMessage( ), e );
+			Log.e( SiragonManager.class.getName( ), e.getLocalizedMessage( ), e );
 		}
 		finally
 		{
@@ -2919,7 +2912,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 				}
 				catch ( IOException e )
 				{
-					Log.e( SysInfoManager.class.getName( ),
+					Log.e( SiragonManager.class.getName( ),
 							e.getLocalizedMessage( ),
 							e );
 				}
@@ -2937,7 +2930,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 		}
 		catch ( NameNotFoundException e )
 		{
-			Log.e( SysInfoManager.class.getName( ), e.getLocalizedMessage( ), e );
+			Log.e( SiragonManager.class.getName( ), e.getLocalizedMessage( ), e );
 		}
 
 		if ( ver == null )
@@ -2954,8 +2947,8 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 		sb.append( context.getString( R.string.collector_head,
 				context.getString( R.string.app_name ),
-				SysInfoManager.getVersionName( context.getPackageManager( ),
-						context.getPackageName( ) ) ) );
+				SiragonManager.getVersionName(context.getPackageManager(),
+                        context.getPackageName()) ) );
 
 		sb.append( context.getString( R.string.device ) ).append( ": " ) //$NON-NLS-1$
 				.append( Build.DEVICE )
@@ -2987,8 +2980,8 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 		try
 		{
-			SysInfoManager.readRawText( sb,
-					new FileInputStream( SysInfoManager.F_VERSION ) );
+			SiragonManager.readRawText(sb,
+                    new FileInputStream(SiragonManager.F_VERSION));
 
 			sb.append( '\n' );
 		}
@@ -3017,64 +3010,64 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 				.append( "</h3></td></tr></table></td></tr>\n" ); //$NON-NLS-1$
 
 		sb.append( "<tr align=\"left\"><td colspan=5><font color=\"#a0a0a0\"><small>" ); //$NON-NLS-1$
-		sb.append( SysInfoManager.escapeHtml( context.getString( R.string.collector_head,
-				context.getString( R.string.app_name ),
-				SysInfoManager.getVersionName( context.getPackageManager( ),
-						context.getPackageName( ) ) ) ) );
+		sb.append( SiragonManager.escapeHtml(context.getString(R.string.collector_head,
+                context.getString(R.string.app_name),
+                SiragonManager.getVersionName(context.getPackageManager(),
+                        context.getPackageName()))) );
 		sb.append( "</small></font></td></tr>\n" ); //$NON-NLS-1$
 
-		sb.append( SysInfoManager.openHeaderRow )
+		sb.append( SiragonManager.openHeaderRow )
 				.append( context.getString( R.string.device_info ) )
-				.append( SysInfoManager.closeHeaderRow );
-		sb.append( SysInfoManager.openRow )
+				.append( SiragonManager.closeHeaderRow );
+		sb.append( SiragonManager.openRow )
 				.append( context.getString( R.string.device ) )
-				.append( SysInfoManager.nextColumn4 )
-				.append( SysInfoManager.escapeHtml( Build.DEVICE ) )
-				.append( SysInfoManager.closeRow );
-		sb.append( SysInfoManager.openRow )
+				.append( SiragonManager.nextColumn4 )
+				.append( SiragonManager.escapeHtml(Build.DEVICE) )
+				.append( SiragonManager.closeRow );
+		sb.append( SiragonManager.openRow )
 				.append( context.getString( R.string.model ) )
-				.append( SysInfoManager.nextColumn4 )
-				.append( SysInfoManager.escapeHtml( Build.MODEL ) )
-				.append( SysInfoManager.closeRow );
-		sb.append( SysInfoManager.openRow )
+				.append( SiragonManager.nextColumn4 )
+				.append( SiragonManager.escapeHtml(Build.MODEL) )
+				.append( SiragonManager.closeRow );
+		sb.append( SiragonManager.openRow )
 				.append( context.getString( R.string.product ) )
-				.append( SysInfoManager.nextColumn4 )
-				.append( SysInfoManager.escapeHtml( Build.PRODUCT ) )
-				.append( SysInfoManager.closeRow );
-		sb.append( SysInfoManager.openRow )
+				.append( SiragonManager.nextColumn4 )
+				.append( SiragonManager.escapeHtml(Build.PRODUCT) )
+				.append( SiragonManager.closeRow );
+		sb.append( SiragonManager.openRow )
 				.append( context.getString( R.string.brand ) )
-				.append( SysInfoManager.nextColumn4 )
-				.append( SysInfoManager.escapeHtml( Build.BRAND ) )
-				.append( SysInfoManager.closeRow );
-		sb.append( SysInfoManager.openRow )
+				.append( SiragonManager.nextColumn4 )
+				.append( SiragonManager.escapeHtml(Build.BRAND) )
+				.append( SiragonManager.closeRow );
+		sb.append( SiragonManager.openRow )
 				.append( context.getString( R.string.release ) )
-				.append( SysInfoManager.nextColumn4 )
-				.append( SysInfoManager.escapeHtml( Build.VERSION.RELEASE ) )
-				.append( SysInfoManager.closeRow );
-		sb.append( SysInfoManager.openRow )
+				.append( SiragonManager.nextColumn4 )
+				.append( SiragonManager.escapeHtml(Build.VERSION.RELEASE) )
+				.append( SiragonManager.closeRow );
+		sb.append( SiragonManager.openRow )
 				.append( context.getString( R.string.build ) )
-				.append( SysInfoManager.nextColumn4 )
-				.append( SysInfoManager.escapeHtml( Build.DISPLAY ) )
-				.append( SysInfoManager.closeRow );
-		sb.append( SysInfoManager.openRow )
+				.append( SiragonManager.nextColumn4 )
+				.append( SiragonManager.escapeHtml(Build.DISPLAY) )
+				.append( SiragonManager.closeRow );
+		sb.append( SiragonManager.openRow )
 				.append( context.getString( R.string.locale ) )
-				.append( SysInfoManager.nextColumn4 )
-				.append( SysInfoManager.escapeHtml( Locale.getDefault( )
-						.toString( ) ) )
-				.append( SysInfoManager.closeRow );
+				.append( SiragonManager.nextColumn4 )
+				.append( SiragonManager.escapeHtml(Locale.getDefault()
+                        .toString()) )
+				.append( SiragonManager.closeRow );
 
-		sb.append( SysInfoManager.emptyRow );
+		sb.append( SiragonManager.emptyRow );
 
-		sb.append( SysInfoManager.openHeaderRow )
+		sb.append( SiragonManager.openHeaderRow )
 				.append( context.getString( R.string.sys_version ) )
-				.append( SysInfoManager.closeHeaderRow );
+				.append( SiragonManager.closeHeaderRow );
 
 		try
 		{
-			SysInfoManager.readRawHTML( sb,
-					new FileInputStream( SysInfoManager.F_VERSION ) );
+			SiragonManager.readRawHTML(sb,
+                    new FileInputStream(SiragonManager.F_VERSION));
 
-			sb.append( SysInfoManager.emptyRow );
+			sb.append( SiragonManager.emptyRow );
 		}
 		catch ( Exception e )
 		{

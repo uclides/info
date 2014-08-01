@@ -24,8 +24,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.regex.Pattern;
 
-import org.uguess.android.sysinfo.SysInfoManager.FormatArrayAdapter;
-import org.uguess.android.sysinfo.SysInfoManager.FormatItem;
+import org.uguess.android.sysinfo.SiragonManager.FormatArrayAdapter;
+import org.uguess.android.sysinfo.SiragonManager.FormatItem;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
@@ -457,13 +457,13 @@ public final class LogViewer extends ListActivity implements Constants
 
 				switch ( format )
 				{
-					case SysInfoManager.PLAINTEXT :
+					case SiragonManager.PLAINTEXT :
 						content = collectTextLogContent( );
 						break;
-					case SysInfoManager.HTML :
+					case SiragonManager.HTML :
 						content = collectHtmlLogContent( );
 						break;
-					case SysInfoManager.CSV :
+					case SiragonManager.CSV :
 						content = collectCSVLogContent( );
 						break;
 				}
@@ -563,8 +563,8 @@ public final class LogViewer extends ListActivity implements Constants
 	{
 		StringBuffer sb = new StringBuffer( );
 
-		SysInfoManager.createTextHeader( this, sb, "Android Device Log - " //$NON-NLS-1$
-				+ new Date( ).toLocaleString( ) );
+		SiragonManager.createTextHeader(this, sb, "Android Device Log - " //$NON-NLS-1$
+                + new Date().toLocaleString());
 
 		ListAdapter adapter = getListView( ).getAdapter( );
 		int cnt = adapter.getCount( );
@@ -642,11 +642,11 @@ public final class LogViewer extends ListActivity implements Constants
 
 					if ( log.time != null )
 					{
-						sb.append( SysInfoManager.escapeCsv( log.time ) );
+						sb.append( SiragonManager.escapeCsv(log.time) );
 					}
 
 					sb.append( ',' )
-							.append( SysInfoManager.escapeCsv( log.msg ) )
+							.append( SiragonManager.escapeCsv(log.msg) )
 							.append( '\n' );
 				}
 				else
@@ -657,11 +657,11 @@ public final class LogViewer extends ListActivity implements Constants
 
 						if ( log.time != null )
 						{
-							sb.append( SysInfoManager.escapeCsv( log.time ) );
+							sb.append( SiragonManager.escapeCsv(log.time) );
 						}
 
 						sb.append( ',' )
-								.append( SysInfoManager.escapeCsv( log.msgList.get( k ) ) )
+								.append( SiragonManager.escapeCsv(log.msgList.get(k)) )
 								.append( '\n' );
 					}
 				}
@@ -677,30 +677,30 @@ public final class LogViewer extends ListActivity implements Constants
 
 				if ( log.msgList == null )
 				{
-					sb.append( SysInfoManager.escapeCsv( log.time ) )
+					sb.append( SiragonManager.escapeCsv(log.time) )
 							.append( ',' )
 							.append( log.level )
 							.append( ',' )
-							.append( SysInfoManager.escapeCsv( log.tag ) )
+							.append( SiragonManager.escapeCsv(log.tag) )
 							.append( ',' )
 							.append( log.pid )
 							.append( ',' )
-							.append( SysInfoManager.escapeCsv( log.msg ) )
+							.append( SiragonManager.escapeCsv(log.msg) )
 							.append( '\n' );
 				}
 				else
 				{
 					for ( int k = 0, size = log.msgList.size( ); k < size; k++ )
 					{
-						sb.append( SysInfoManager.escapeCsv( log.time ) )
+						sb.append( SiragonManager.escapeCsv(log.time) )
 								.append( ',' )
 								.append( log.level )
 								.append( ',' )
-								.append( SysInfoManager.escapeCsv( log.tag ) )
+								.append( SiragonManager.escapeCsv(log.tag) )
 								.append( ',' )
 								.append( log.pid )
 								.append( ',' )
-								.append( SysInfoManager.escapeCsv( log.msgList.get( k ) ) )
+								.append( SiragonManager.escapeCsv(log.msgList.get(k)) )
 								.append( '\n' );
 					}
 				}
@@ -714,96 +714,96 @@ public final class LogViewer extends ListActivity implements Constants
 	{
 		StringBuffer sb = new StringBuffer( );
 
-		SysInfoManager.createHtmlHeader( this,
-				sb,
-				SysInfoManager.escapeHtml( "Android Device Log - " + new Date( ).toLocaleString( ) ) ); //$NON-NLS-1$
+		SiragonManager.createHtmlHeader(this,
+                sb,
+                SiragonManager.escapeHtml("Android Device Log - " + new Date().toLocaleString())); //$NON-NLS-1$
 
 		ListAdapter adapter = getListView( ).getAdapter( );
 		int cnt = adapter.getCount( );
 
 		if ( dmesgMode )
 		{
-			sb.append( SysInfoManager.openHeaderRow )
+			sb.append( SiragonManager.openHeaderRow )
 					.append( "Dmesg " //$NON-NLS-1$
 							+ getString( R.string.log ) )
-					.append( SysInfoManager.closeHeaderRow );
+					.append( SiragonManager.closeHeaderRow );
 
-			sb.append( SysInfoManager.openTitleRow ).append( "<b>" ) //$NON-NLS-1$
+			sb.append( SiragonManager.openTitleRow ).append( "<b>" ) //$NON-NLS-1$
 					.append( getString( R.string.log_level ) )
 					.append( "</b>" ) //$NON-NLS-1$
-					.append( SysInfoManager.nextColumn )
+					.append( SiragonManager.nextColumn )
 					.append( "<b>" ) //$NON-NLS-1$
 					.append( getString( R.string.time ) )
 					.append( "</b>" ) //$NON-NLS-1$
-					.append( SysInfoManager.nextColumn )
+					.append( SiragonManager.nextColumn )
 					.append( "<b>" ) //$NON-NLS-1$
 					.append( getString( R.string.message ) )
 					.append( "</b>" ) //$NON-NLS-1$
-					.append( SysInfoManager.closeRow );
+					.append( SiragonManager.closeRow );
 
 			for ( int i = 0; i < cnt; i++ )
 			{
 				LogItem log = (LogItem) adapter.getItem( i );
 
-				sb.append( SysInfoManager.openRow )
+				sb.append( SiragonManager.openRow )
 						.append( "<" + log.level + ">" ) //$NON-NLS-1$ //$NON-NLS-2$
-						.append( SysInfoManager.nextColumn );
+						.append( SiragonManager.nextColumn );
 
 				sb.append( log.time == null ? "&nbsp;" //$NON-NLS-1$
-						: SysInfoManager.escapeHtml( log.time ) )
-						.append( SysInfoManager.nextColumn );
+						: SiragonManager.escapeHtml(log.time) )
+						.append( SiragonManager.nextColumn );
 
-				sb.append( SysInfoManager.escapeHtml( log.getMsg( ) ) )
-						.append( SysInfoManager.closeRow );
+				sb.append( SiragonManager.escapeHtml(log.getMsg()) )
+						.append( SiragonManager.closeRow );
 			}
 		}
 		else
 		{
-			sb.append( SysInfoManager.openHeaderRow )
+			sb.append( SiragonManager.openHeaderRow )
 					.append( "Logcat " //$NON-NLS-1$
 							+ getString( R.string.log ) )
-					.append( SysInfoManager.closeHeaderRow );
+					.append( SiragonManager.closeHeaderRow );
 
-			sb.append( SysInfoManager.openTitleRow ).append( "<b>" ) //$NON-NLS-1$
+			sb.append( SiragonManager.openTitleRow ).append( "<b>" ) //$NON-NLS-1$
 					.append( getString( R.string.time ) )
 					.append( "</b>" ) //$NON-NLS-1$
-					.append( SysInfoManager.nextColumn )
+					.append( SiragonManager.nextColumn )
 					.append( "<b>" ) //$NON-NLS-1$
 					.append( getString( R.string.log_level ) )
 					.append( "</b>" ) //$NON-NLS-1$
-					.append( SysInfoManager.nextColumn )
+					.append( SiragonManager.nextColumn )
 					.append( "<b>" ) //$NON-NLS-1$
 					.append( getString( R.string.tag ) )
 					.append( "</b>" ) //$NON-NLS-1$
-					.append( SysInfoManager.nextColumn )
+					.append( SiragonManager.nextColumn )
 					.append( "<b>" ) //$NON-NLS-1$
 					.append( getString( R.string.pid ) )
 					.append( "</b>" ) //$NON-NLS-1$
-					.append( SysInfoManager.nextColumn )
+					.append( SiragonManager.nextColumn )
 					.append( "<b>" ) //$NON-NLS-1$
 					.append( getString( R.string.message ) )
 					.append( "</b>" ) //$NON-NLS-1$
-					.append( SysInfoManager.closeRow );
+					.append( SiragonManager.closeRow );
 
 			for ( int i = 0; i < cnt; i++ )
 			{
 				LogItem log = (LogItem) adapter.getItem( i );
 
-				sb.append( SysInfoManager.openRow )
-						.append( SysInfoManager.escapeHtml( log.time ) )
-						.append( SysInfoManager.nextColumn );
+				sb.append( SiragonManager.openRow )
+						.append( SiragonManager.escapeHtml(log.time) )
+						.append( SiragonManager.nextColumn );
 
-				sb.append( log.level ).append( SysInfoManager.nextColumn );
-				sb.append( SysInfoManager.escapeHtml( log.tag ) )
-						.append( SysInfoManager.nextColumn );
-				sb.append( log.pid ).append( SysInfoManager.nextColumn );
+				sb.append( log.level ).append( SiragonManager.nextColumn );
+				sb.append( SiragonManager.escapeHtml(log.tag) )
+						.append( SiragonManager.nextColumn );
+				sb.append( log.pid ).append( SiragonManager.nextColumn );
 
-				sb.append( SysInfoManager.escapeHtml( log.getMsg( ) ) )
-						.append( SysInfoManager.closeRow );
+				sb.append( SiragonManager.escapeHtml(log.getMsg()) )
+						.append( SiragonManager.closeRow );
 			}
 		}
 
-		sb.append( SysInfoManager.emptyRow );
+		sb.append( SiragonManager.emptyRow );
 
 		sb.append( "</table></font></body></html>" ); //$NON-NLS-1$
 

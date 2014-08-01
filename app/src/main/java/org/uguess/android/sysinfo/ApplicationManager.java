@@ -1756,14 +1756,14 @@ public final class ApplicationManager extends ListFragment implements Constants
 				if ( content != null )
 				{
 					handler.sendMessage( handler.obtainMessage( MSG_CHECK_FORCE_COMPRESSION,
-							SysInfoManager.PLAINTEXT,
+							SiragonManager.PLAINTEXT,
 							0,
 							content ) );
 				}
 				else
 				{
 					handler.sendMessage( handler.obtainMessage( MSG_CONTENT_READY,
-							SysInfoManager.PLAINTEXT,
+							SiragonManager.PLAINTEXT,
 							0,
 							content ) );
 				}

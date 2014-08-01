@@ -37,7 +37,7 @@ import android.widget.TextView;
 /**
  * BatteryInfoActivity
  */
-public final class BatteryInfoActivity extends SysInfoManager.PopActivity
+public final class BatteryInfoActivity extends SiragonManager.PopActivity
 {
 
 	private static final String PUS = "com.android.settings.fuelgauge.PowerUsageSummary"; //$NON-NLS-1$
