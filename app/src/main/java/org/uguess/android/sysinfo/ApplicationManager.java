@@ -270,7 +270,7 @@ public final class ApplicationManager extends ListFragment implements Constants
 													PREF_KEY_APP_EXPORT_DIR,
 													DEFAULT_EXPORT_FOLDER ) ) );
 
-					Notification nc = new Notification( R.drawable.icon,
+					Notification nc = new Notification( R.drawable.logo2,
 							getResources( ).getString( R.string.export_complete ),
 							System.currentTimeMillis( ) );
 

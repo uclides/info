@@ -1881,7 +1881,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.sd_storage ) )
-					.append( "\n" ); //$NON-NLS-1$
+					.append( "=" ); //$NON-NLS-1$
 
 			String[] info = getExternalStorageInfo( );
 			if ( info == null )
@@ -2943,7 +2943,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 	static void createTextHeader( Context context, StringBuffer sb, String title )
 	{
-		sb.append( title ).append( "\n\n" ); //$NON-NLS-1$
+		sb.append( title ).append( "\n" ); //$NON-NLS-1$
 
 		sb.append( context.getString( R.string.collector_head,
 				context.getString( R.string.app_name ),
@@ -2976,7 +2976,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 				.append( context.getString( R.string.locale ) )
 				.append( ": " ) //$NON-NLS-1$
 				.append( Locale.getDefault( ).toString( ) )
-				.append( "\n\n" ); //$NON-NLS-1$
+				.append( "\n" ); //$NON-NLS-1$
 
 		try
 		{
