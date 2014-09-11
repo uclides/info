@@ -31,14 +31,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1644b4f6-42c6-491a-861f-2cc914e41a2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/ApplicationManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/ApplicationManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/org/uguess/android/sysinfo/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/org/uguess/android/sysinfo/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/aidl/debug/android/content/pm/IPackageStatsObserver.java" afterPath="$PROJECT_DIR$/app/build/generated/source/aidl/debug/android/content/pm/IPackageStatsObserver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SiragonManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SiragonManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QSystemInfo.iws" />
@@ -1639,7 +1631,11 @@
       <created>1406777270971</created>
       <updated>1406777270971</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="works">
+      <created>1410400110429</created>
+      <updated>1410400110429</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
