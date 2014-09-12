@@ -1881,7 +1881,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.sd_storage ) )
-					.append( "=" ); //$NON-NLS-1$
+					.append( ":\n" ); //$NON-NLS-1$
 
 			String[] info = getExternalStorageInfo( );
 			if ( info == null )
@@ -1892,9 +1892,9 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			{
 				sb.append( getString( R.string.storage_external,
 						info[0],
-						info[1] ) );
+						info[1] )+"\n" );
 			}
-			sb.append( "\n\n" ); //$NON-NLS-1$
+			sb.append( "####################\n" ); //$NON-NLS-1$
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.a2sd_storage ) )
@@ -1903,7 +1903,8 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			if ( info == null )
 			{
 				sb.append( getString( R.string.info_not_available ) );
-			}
+                sb.append( "\n" );
+            }
 			else
 			{
 				sb.append( getString( R.string.storage_summary,
@@ -1912,7 +1913,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                 sb.append( "\n\n" );
 
 			}
-            sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "####################\n" ); //$NON-NLS-1$
 
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.display ) )
@@ -1932,7 +1933,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                             info2[i])).append("\n");
                 }
             }
-            sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "####################\n" ); //$NON-NLS-1$
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_back_img_support ) )
                     .append("\n"); //$NON-NLS-1$
@@ -1951,7 +1952,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                             info2[i])).append("\n");
                 }
             }
-            sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "####################\n" ); //$NON-NLS-1$
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_back_vid_support ) )
                     .append("\n"); //$NON-NLS-1$
@@ -1970,7 +1971,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                             info2[i])).append("\n");
                 }
             }
-            sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "####################\n" ); //$NON-NLS-1$
 //////////////////////////////////////////////////////////////////////////////////
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_other_feature ) )
@@ -1990,7 +1991,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                             info2[i])).append("\n");
                 }
             }
-            sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "####################\n" ); //$NON-NLS-1$
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_front_img_support ) )
                     .append("\n"); //$NON-NLS-1$
@@ -2009,7 +2010,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                             info2[i])).append("\n");
                 }
             }
-            sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "####################\n" ); //$NON-NLS-1$
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_front_vid_support ) )
                     .append("\n"); //$NON-NLS-1$
@@ -2028,7 +2029,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                             info2[i])).append("\n");
                 }
             }
-            sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "####################\n" ); //$NON-NLS-1$
           sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_feature ) )
                     .append( "\n" ); //$NON-NLS-1$}
@@ -2043,7 +2044,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
                             info2[i])).append("\n");
                 }
             }
-            sb.append( "\n\n" ); //$NON-NLS-1$*/
+            sb.append( "####################\n" ); //$NON-NLS-1$*/
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_back_available ) )
                     .append( "\n" ); //$NON-NLS-1$
@@ -2056,9 +2057,9 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
             else
             {
                 sb.append( getString( R.string.number_cams,
-                        cams) );
+                        cams)+"\n" );
             }
-            sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "####################\n" ); //$NON-NLS-1$
 
             sb.append( "* " ) //$NON-NLS-1$
                     .append( getString( R.string.camera_flash_available ) )
@@ -2066,14 +2067,14 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 
             boolean flash=getAvailableFlash();
             if(flash==false){
-                sb.append( getString( R.string.info_not_available ) );
+                sb.append( getString( R.string.info_not_available )+"\n" );
             }
             else{
                 sb.append( getString( R.string.flash_available,
-                        flash ) );
+                        flash )+"\n" );
             }
 
-            sb.append( "\n\n" ); //$NON-NLS-1$
+            sb.append( "####################\n" ); //$NON-NLS-1$
 //////////////////////////////////////////////////////////////////////////////////////7
 
 			sb.append( "* " ) //$NON-NLS-1$
@@ -2084,15 +2085,15 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			if ( info == null )
 			{
 				sb.append( getString( R.string
-                        .info_not_available ) );
+                        .info_not_available )+"\n" );
 			}
 			else
 			{
 				sb.append( getString( R.string.storage_summary,
 						info[0],
-						info[1] ) );
+						info[1] )+"\n" );
 			}
-			sb.append( "\n\n" ); //$NON-NLS-1$
+			sb.append( "####################\n" ); //$NON-NLS-1$
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.system_storage ) )
@@ -2101,15 +2102,15 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			info = getSystemStorageInfo( );
 			if ( info == null )
 			{
-				sb.append( getString( R.string.info_not_available ) );
+				sb.append( getString( R.string.info_not_available )+"\n" );
 			}
 			else
 			{
 				sb.append( getString( R.string.storage_summary,
 						info[0],
-						info[1] ) );
+						info[1] )+"\n" );
 			}
-			sb.append( "\n\n" ); //$NON-NLS-1$
+			sb.append( "####################\n" ); //$NON-NLS-1$
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.cache_storage ) )
@@ -2118,15 +2119,15 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			info = getCacheStorageInfo( );
 			if ( info == null )
 			{
-				sb.append( getString( R.string.info_not_available ) );
+				sb.append( getString( R.string.info_not_available )+"\n" );
 			}
 			else
 			{
 				sb.append( getString( R.string.storage_summary,
 						info[0],
-						info[1] ) );
+						info[1] )+"\n" );
 			}
-			sb.append( "\n\n" ); //$NON-NLS-1$
+			sb.append( "####################\n" ); //$NON-NLS-1$
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.memory ) )
@@ -2135,31 +2136,31 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 			info = getMemInfo( );
 			if ( info == null )
 			{
-				sb.append( getString( R.string.info_not_available ) );
+				sb.append( getString( R.string.info_not_available )+"\n" );
 			}
 			else
 			{
 				sb.append( getString( R.string.storage_summary,
 						info[0],
-						info[2] ) + getString( R.string.idle_info, info[1] ) );
+						info[2] ) + getString( R.string.idle_info, info[1] )+"\n" );
 			}
-			sb.append( "\n\n" ); //$NON-NLS-1$
+			sb.append( "####################\n" ); //$NON-NLS-1$
 
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.processor ) )
 					.append("\n") //$NON-NLS-1$
-					.append( getCpuInfo() )
-					.append( "\n\n" ); //$NON-NLS-1$
+					.append( getCpuInfo()+"\n" )
+					.append( "####################\n" ); //$NON-NLS-1$
 
 			String nInfo = getNetAddressInfo( );
 			sb.append( "* " ) //$NON-NLS-1$
 					.append( getString( R.string.net_address ) )
 					.append( "\n" ) //$NON-NLS-1$
-					.append( nInfo == null ? getString( R.string.info_not_available )
-							: nInfo )
-					.append("\n\n"); //$NON-NLS-1$
+					.append( nInfo == null ? getString( R.string.info_not_available )+"\n"
+							: nInfo +"\n")
+					.append("####################\n"); //$NON-NLS-1$
 
-			sb.append( '\n' );
+			//sb.append( '\n' );
 
 			try
 			{
@@ -2176,7 +2177,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 							.append( '\n' );
 				}
 
-				sb.append( '\n' );
+				sb.append( "####################\n" );
 
 				f = new File( F_CPU_INFO );
 				if ( f.exists( ) )
@@ -2189,7 +2190,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 							.append( '\n' );
 				}
 
-				sb.append( '\n' );
+				sb.append( "####################\n" );
 
 				f = new File( F_MEM_INFO );
 				if ( f.exists( ) )
@@ -2202,7 +2203,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 							.append( '\n' );
 				}
 
-				sb.append( '\n' );
+				sb.append( "####################\n" );
 
 				f = new File( F_MOUNT_INFO );
 				if ( f.exists( ) )
@@ -2215,7 +2216,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 							.append( '\n' );
 				}
 
-				sb.append( '\n' );
+				sb.append( "####################\n" );
 			}
 			catch ( Exception e )
 			{
@@ -2259,7 +2260,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 				}
 			}
 
-			sb.append( '\n' );
+			sb.append( "####################\n" );
 		}
 
 		if ( items[PROCESSES] )
@@ -2313,7 +2314,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 				}
 			}
 
-			sb.append( '\n' );
+			sb.append( "####################\n" );
 		}
 
 		if ( items[NETSTATES] )
@@ -2336,7 +2337,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 						e );
 			}
 
-			sb.append( '\n' );
+			sb.append( "####################\n" );
 		}
 
 		if ( items[DMESG_LOG] )
@@ -2357,7 +2358,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 						e );
 			}
 
-			sb.append( '\n' );
+			sb.append( "####################\n" );
 		}
 
 		if ( items[LOGCAT_LOG] )
@@ -2379,7 +2380,7 @@ uploadFile.uploadFile("/sdcard/logs/android.zip");
 						e );
 			}
 
-			sb.append( '\n' );
+			sb.append( "####################\n" );
 		}
 
 		return sb.toString( );

@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: C:\\Users\\Uclides\\Desktop\\siragon\\siragon\\app\\src\\main\\aidl\\android\\content\\pm\\IPackageStatsObserver.aidl
+ * Original file: C:\\Users\\Uclides\\Desktop\\siragon\\info\\app\\src\\main\\aidl\\android\\content\\pm\\IPackageStatsObserver.aidl
  */
 package android.content.pm;
 /**
