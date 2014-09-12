@@ -26,15 +26,21 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: org.uguess.android.sysinfo" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1644b4f6-42c6-491a-861f-2cc914e41a2c" name="Default" comment="works">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/org/uguess/android/sysinfo/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/org/uguess/android/sysinfo/BuildConfig.java" />
+    <list default="true" id="1644b4f6-42c6-491a-861f-2cc914e41a2c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_20_0_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_20_0_0.xml" />
+      <change type="DELETED" beforePath="C:\Users\Uclides Gil\Documents\ANDROID\info\.idea\libraries\support_v4_19_1_0.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/aidl/debug/android/content/pm/IPackageStatsObserver.java" afterPath="$PROJECT_DIR$/app/build/generated/source/aidl/debug/android/content/pm/IPackageStatsObserver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SiragonManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SiragonManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QSystemInfo.iws" />
@@ -312,6 +318,11 @@
                 <option name="description" value="Installs and runs the tests for Build 'debug' on connected devices." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="connectedAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support:support-v4:20.0.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComAndroidSupportSupportV42000Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -772,6 +783,11 @@
                 <option name="name" value="preReleaseBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support:support-v4:20.0.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComAndroidSupportSupportV42000Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareDebugDependencies" />
               </ExternalTaskPojo>
@@ -855,6 +871,11 @@
             </list>
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4223792923156" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1008,8 +1029,10 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15on/1.48/28b7614b908a47844bb27e3c94b45b6893656265/bcpkix-jdk15on-1.48.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/0.12.1/cfd726d061ebc6bd2ac8d8f4eb540fedfee6067f/builder-0.12.1-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/0.12.1/351adf590ab6dfee5e9760f2c6894b8002b3cb5/builder-0.12.1.jar" />
-                            <option value="$APPLICATION_HOME_DIR$/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0-sources.jar" />
-                            <option value="$APPLICATION_HOME_DIR$/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/sdk/extras/android/m2repository/com/android/support/support-v4/20.0.0/support-v4-20.0.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/sdk/extras/android/m2repository/com/android/support/support-v4/20.0.0/support-v4-20.0.0.aar" />
+                            <option value="$APPLICATION_HOME_DIR$/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar" />
                           </list>
                         </option>
                         <option name="path" value="$PROJECT_DIR$/app" />
@@ -1114,20 +1137,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/Util.java" />
         <option value="$PROJECT_DIR$/.idea/.name" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/QSystemInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SysInfoManager.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SiragonInfo.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/ApplicationManager.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/LogViewer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/ProcessManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/GLInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/GLRender.java" />
+        <option value="$PROJECT_DIR$/import-summary.txt" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/QSystemInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/ProcessManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/RestoreAppActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SensorInfoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SysInfoManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/Util.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/WidgetProvider.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/ApplicationManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/BatteryInfoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/Constants.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/CpuInfoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/LogViewer.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/MemInfoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/NetStateManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/NetworkInfoActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SiragonManager.java" />
       </list>
     </option>
@@ -1164,8 +1198,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1176,7 +1208,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1188,6 +1222,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="0123456789ABCDEF" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager" selected="Android Application.app">
@@ -1220,6 +1256,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1245,19 +1294,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1363,18 +1399,10 @@
       <updated>1406769995105</updated>
     </task>
     <task id="LOCAL-00001" summary="works">
-      <created>1406777270971</created>
-      <updated>1406777270971</updated>
+      <created>1406837937563</created>
+      <updated>1406837937563</updated>
     </task>
-    <task id="LOCAL-00002" summary="works">
-      <created>1410400110429</created>
-      <updated>1410400110429</updated>
-    </task>
-    <task id="LOCAL-00003" summary="works">
-      <created>1410400118385</created>
-      <updated>1410400118385</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1383,31 +1411,31 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11954262" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262295" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.01871102" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1421,23 +1449,23 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16791044" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25036603" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12016719" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276923" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.047540985" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1460,174 +1488,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="works" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="1" />
-    </breakpoint-manager>
+    <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_lst_view.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_item.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/log_item.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/net_item.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pref_header_item.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/proc_lst_view.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pub_info.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/send_item.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/sensor_item.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/widget.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-es/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.785714" vertical-offset="3148" max-vertical-offset="5763">
-          <caret line="198" column="40" selection-start-line="198" selection-start-column="40" selection-end-line="198" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-15/data/res/drawable/action_bar_background.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-15/data/res/drawable/activated_background_holo_dark.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-15/data/res/drawable/activated_background_holo_light.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-15/data/res/drawable/action_bar_divider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54285717" vertical-offset="0" max-vertical-offset="595">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-15/data/res/drawable/tab_bottom_left.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-15/data/res/drawable/tab_bottom_left_v4.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-15/data/res/drawable/tab_indicator_v4.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-15/data/res/drawable/tab_indicator_ab_holo.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/sdk/platforms/android-15/data/res/drawable/textfield_search.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
@@ -1708,182 +1571,561 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36402568" vertical-offset="0" max-vertical-offset="934">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pref_header_item.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pref_item.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_item.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/import-summary.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20021413" vertical-offset="0" max-vertical-offset="935">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.21938775" vertical-offset="41" max-vertical-offset="935">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/info.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62271065" vertical-offset="0" max-vertical-offset="1836">
-          <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
-          <folding>
-            <element signature="e#532#550#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="575">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/Constants.java">
+    <entry file="file://$PROJECT_DIR$/local.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.25" vertical-offset="56" max-vertical-offset="1394">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/UploapFile.java">
+    <entry file="file://$PROJECT_DIR$/Siragon.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3791">
-          <caret line="0" column="34" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="575">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/Util.java">
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.714286" vertical-offset="227" max-vertical-offset="11033">
-          <caret line="46" column="33" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/WidgetProvider.java">
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.571429" vertical-offset="1941" max-vertical-offset="3876">
-          <caret line="166" column="57" selection-start-line="166" selection-start-column="43" selection-end-line="166" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/ApplicationManager.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-49.392857" vertical-offset="28" max-vertical-offset="9622">
-          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.059130434" vertical-offset="0" max-vertical-offset="43180">
+          <caret line="2" column="48" selection-start-line="0" selection-start-column="0" selection-end-line="2534" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/BatteryInfoActivity.java">
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.571429" vertical-offset="496" max-vertical-offset="4539">
-          <caret line="74" column="39" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/RestoreAppActivity.java">
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.66167" vertical-offset="22067" max-vertical-offset="23001">
-          <caret line="123" column="25" selection-start-line="123" selection-start-column="25" selection-end-line="123" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SensorInfoActivity.java">
+    <entry file="file://$PROJECT_DIR$/.idea/.name">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1938">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SiragonInfo.java">
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16381156" vertical-offset="0" max-vertical-offset="10472">
-          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="575">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0-sources.jar!/android/support/v4/app/Fragment.java">
+    <entry file="file://$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4993895" vertical-offset="9009" max-vertical-offset="26996">
-          <caret line="635" column="57" selection-start-line="635" selection-start-column="47" selection-end-line="635" selection-end-column="57" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SiragonManager.java">
+    <entry file="file://$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45787546" vertical-offset="33387" max-vertical-offset="61319">
-          <caret line="2144" column="84" selection-start-line="2144" selection-start-column="84" selection-end-line="2144" selection-end-column="84" />
-          <folding>
-            <element signature="e#50709#50741#0" expanded="true" />
-            <element signature="e#50871#50911#0" expanded="true" />
-            <element signature="e#50948#51016#0" expanded="true" />
-            <element signature="e#51136#51170#0" expanded="true" />
-            <element signature="e#51290#51330#0" expanded="true" />
-            <element signature="e#51411#51478#0" expanded="true" />
-            <element signature="e#51664#51693#0" expanded="true" />
-            <element signature="e#51867#51905#0" expanded="true" />
-            <element signature="e#52034#52104#0" expanded="true" />
-            <element signature="e#52290#52335#0" expanded="true" />
-            <element signature="e#52516#52554#0" expanded="true" />
-            <element signature="e#52945#52990#0" expanded="true" />
-            <element signature="e#54067#54143#0" expanded="true" />
-            <element signature="e#56463#56503#0" expanded="true" />
-            <element signature="e#58918#58985#0" expanded="true" />
-            <element signature="e#58988#59028#0" expanded="true" />
-            <element signature="e#59395#59428#0" expanded="true" />
-            <element signature="e#59740#59769#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.3252174" vertical-offset="0" max-vertical-offset="575">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/Uclides_Gil.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/copyright/profiles_settings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="6120">
-          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.36197442" vertical-offset="4052" max-vertical-offset="6086">
+          <caret line="250" column="31" selection-start-line="250" selection-start-column="18" selection-end-line="250" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/LogViewer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/aidl/android/content/pm/PackageStats.aidl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="27200">
-          <caret line="80" column="46" selection-start-line="80" selection-start-column="46" selection-end-line="80" selection-end-column="46" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/MemInfoActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/aidl/android/content/pm/IPackageStatsObserver.aidl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="4284">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/NetStateManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="23783">
-          <caret line="78" column="19" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
-          <folding />
+        <state vertical-scroll-proportion="0.029565217" vertical-offset="0" max-vertical-offset="21794">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/NetworkInfoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="5066">
-          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.028911564" vertical-offset="0" max-vertical-offset="4488">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/MemInfoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7233273" vertical-offset="229" max-vertical-offset="782">
+          <caret line="234" column="42" selection-start-line="234" selection-start-column="38" selection-end-line="234" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0018083183" vertical-offset="1920" max-vertical-offset="2550">
+          <caret line="382" column="5" selection-start-line="382" selection-start-column="5" selection-end-line="382" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/WidgetProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.198915" vertical-offset="0" max-vertical-offset="901">
+          <caret line="117" column="7" selection-start-line="117" selection-start-column="7" selection-end-line="117" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/UploapFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56962025" vertical-offset="76" max-vertical-offset="680">
+          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SensorInfoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7233273" vertical-offset="484" max-vertical-offset="1037">
+          <caret line="137" column="26" selection-start-line="137" selection-start-column="19" selection-end-line="137" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6925859" vertical-offset="42" max-vertical-offset="1360">
+          <caret line="42" column="38" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/RestoreAppActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3876">
+          <caret line="1312" column="38" selection-start-line="1312" selection-start-column="38" selection-end-line="1312" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="383">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/ProcessManager.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="24038" max-vertical-offset="40460">
-          <caret line="1414" column="23" selection-start-line="1414" selection-start-column="20" selection-end-line="1414" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68449783" vertical-offset="920" max-vertical-offset="1836">
+          <caret line="91" column="62" selection-start-line="91" selection-start-column="62" selection-end-line="91" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/BatteryInfoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="4794">
+          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/ApplicationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="47209">
+          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/CpuInfoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1479" max-vertical-offset="3859">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="3349">
+          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/LogViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="25976">
+          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/ProcessManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="38046">
+          <caret line="81" column="75" selection-start-line="81" selection-start-column="66" selection-end-line="81" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/uguess/android/sysinfo/SiragonManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6554054" vertical-offset="48361" max-vertical-offset="63104">
+          <caret line="2985" column="9" selection-start-line="2985" selection-start-column="9" selection-end-line="2985" selection-end-column="9" />
+          <folding>
+            <element signature="e#8086#9347#0" expanded="true" />
+            <element signature="e#8584#8613#0" expanded="true" />
+            <element signature="e#8704#8730#0" expanded="true" />
+            <element signature="e#8809#8840#0" expanded="true" />
+            <element signature="e#8915#8941#0" expanded="true" />
+            <element signature="e#9024#9058#0" expanded="true" />
+            <element signature="e#9148#9177#0" expanded="true" />
+            <element signature="e#9343#9344#0" expanded="true" />
+            <element signature="e#9369#10206#0" expanded="true" />
+            <element signature="e#10202#10203#0" expanded="true" />
+            <element signature="e#10510#10542#0" expanded="true" />
+            <element signature="e#10630#10664#0" expanded="true" />
+            <element signature="e#10756#10794#0" expanded="true" />
+            <element signature="e#10882#10918#0" expanded="true" />
+            <element signature="e#11004#11039#0" expanded="true" />
+            <element signature="e#11111#11139#0" expanded="true" />
+            <element signature="e#11207#11238#0" expanded="true" />
+            <element signature="e#11310#11343#0" expanded="true" />
+            <element signature="e#11419#11454#0" expanded="true" />
+            <element signature="e#11518#11547#0" expanded="true" />
+            <element signature="e#11606#11635#0" expanded="true" />
+            <element signature="e#11786#11815#0" expanded="true" />
+            <element signature="e#11882#11913#0" expanded="true" />
+            <element signature="e#11984#12017#0" expanded="true" />
+            <element signature="e#12153#12184#0" expanded="true" />
+            <element signature="e#12559#12569#0" expanded="true" />
+            <element signature="e#15515#15555#0" expanded="true" />
+            <element signature="e#15564#15615#0" expanded="true" />
+            <element signature="e#15618#15662#0" expanded="true" />
+            <element signature="e#15999#16039#0" expanded="true" />
+            <element signature="e#16046#16097#0" expanded="true" />
+            <element signature="e#16196#16236#0" expanded="true" />
+            <element signature="e#16243#16294#0" expanded="true" />
+            <element signature="e#16399#16439#0" expanded="true" />
+            <element signature="e#16446#16497#0" expanded="true" />
+            <element signature="e#16598#16638#0" expanded="true" />
+            <element signature="e#16645#16696#0" expanded="true" />
+            <element signature="e#16795#16835#0" expanded="true" />
+            <element signature="e#16842#16893#0" expanded="true" />
+            <element signature="e#17001#17041#0" expanded="true" />
+            <element signature="e#18010#18050#0" expanded="true" />
+            <element signature="e#20986#21042#0" expanded="true" />
+            <element signature="e#24130#24170#0" expanded="true" />
+            <element signature="e#24210#24251#0" expanded="true" />
+            <element signature="e#24278#24318#0" expanded="true" />
+            <element signature="e#27035#27043#0" expanded="true" />
+            <element signature="e#29083#29091#0" expanded="true" />
+            <element signature="e#39413#39649#0" expanded="true" />
+            <element signature="e#39643#39644#0" expanded="true" />
+            <element signature="e#39696#39714#0" expanded="true" />
+            <element signature="e#40061#40231#0" expanded="true" />
+            <element signature="e#40225#40226#0" expanded="true" />
+            <element signature="e#40268#41352#0" expanded="true" />
+            <element signature="e#40608#40631#0" expanded="true" />
+            <element signature="e#40804#40836#0" expanded="true" />
+            <element signature="e#40865#40891#0" expanded="true" />
+            <element signature="e#40940#41151#0" expanded="true" />
+            <element signature="e#41143#41144#0" expanded="true" />
+            <element signature="e#41200#41220#0" expanded="true" />
+            <element signature="e#41345#41346#0" expanded="true" />
+            <element signature="e#41399#41419#0" expanded="true" />
+            <element signature="e#41476#41506#0" expanded="true" />
+            <element signature="e#41515#41545#0" expanded="true" />
+            <element signature="e#41554#41585#0" expanded="true" />
+            <element signature="e#41594#41627#0" expanded="true" />
+            <element signature="e#41647#41672#0" expanded="true" />
+            <element signature="e#41707#41732#0" expanded="true" />
+            <element signature="e#44257#44273#0" expanded="true" />
+            <element signature="e#44812#44831#0" expanded="true" />
+            <element signature="e#45001#45014#0" expanded="true" />
+            <element signature="e#47514#47635#0" expanded="true" />
+            <element signature="e#47749#47766#0" expanded="true" />
+            <element signature="e#47848#47862#0" expanded="true" />
+            <element signature="e#48000#48251#0" expanded="true" />
+            <element signature="e#48245#48246#0" expanded="true" />
+            <element signature="e#48298#48313#0" expanded="true" />
+            <element signature="e#48334#48354#0" expanded="true" />
+            <element signature="e#49034#49077#0" expanded="true" />
+            <element signature="e#49153#50301#0" expanded="true" />
+            <element signature="e#50296#50297#0" expanded="true" />
+            <element signature="e#50631#50661#0" expanded="true" />
+            <element signature="e#50760#50792#0" expanded="true" />
+            <element signature="e#50922#50962#0" expanded="true" />
+            <element signature="e#50999#51067#0" expanded="true" />
+            <element signature="e#51187#51221#0" expanded="true" />
+            <element signature="e#51345#51385#0" expanded="true" />
+            <element signature="e#51466#51533#0" expanded="true" />
+            <element signature="e#51717#51746#0" expanded="true" />
+            <element signature="e#51924#51962#0" expanded="true" />
+            <element signature="e#52091#52161#0" expanded="true" />
+            <element signature="e#52347#52392#0" expanded="true" />
+            <element signature="e#52573#52611#0" expanded="true" />
+            <element signature="e#52740#52816#0" expanded="true" />
+            <element signature="e#53002#53047#0" expanded="true" />
+            <element signature="e#53228#53266#0" expanded="true" />
+            <element signature="e#53395#53471#0" expanded="true" />
+            <element signature="e#53740#53782#0" expanded="true" />
+            <element signature="e#53961#53999#0" expanded="true" />
+            <element signature="e#54128#54204#0" expanded="true" />
+            <element signature="e#54390#54436#0" expanded="true" />
+            <element signature="e#54613#54651#0" expanded="true" />
+            <element signature="e#54780#54857#0" expanded="true" />
+            <element signature="e#55043#55089#0" expanded="true" />
+            <element signature="e#55270#55308#0" expanded="true" />
+            <element signature="e#55437#55514#0" expanded="true" />
+            <element signature="e#55698#55734#0" expanded="true" />
+            <element signature="e#55893#55933#0" expanded="true" />
+            <element signature="e#56049#56125#0" expanded="true" />
+            <element signature="e#56313#56356#0" expanded="true" />
+            <element signature="e#56558#56598#0" expanded="true" />
+            <element signature="e#56674#56736#0" expanded="true" />
+            <element signature="e#56898#56942#0" expanded="true" />
+            <element signature="e#57106#57146#0" expanded="true" />
+            <element signature="e#57214#57282#0" expanded="true" />
+            <element signature="e#57509#57547#0" expanded="true" />
+            <element signature="e#57671#57736#0" expanded="true" />
+            <element signature="e#57778#57845#0" expanded="true" />
+            <element signature="e#57965#58001#0" expanded="true" />
+            <element signature="e#58117#58157#0" expanded="true" />
+            <element signature="e#58199#58266#0" expanded="true" />
+            <element signature="e#58386#58421#0" expanded="true" />
+            <element signature="e#58537#58577#0" expanded="true" />
+            <element signature="e#58619#58686#0" expanded="true" />
+            <element signature="e#58806#58834#0" expanded="true" />
+            <element signature="e#58941#58981#0" expanded="true" />
+            <element signature="e#59023#59090#0" expanded="true" />
+            <element signature="e#59093#59133#0" expanded="true" />
+            <element signature="e#59253#59284#0" expanded="true" />
+            <element signature="e#59504#59537#0" expanded="true" />
+            <element signature="e#59608#59648#0" expanded="true" />
+            <element signature="e#59852#59881#0" expanded="true" />
+            <element signature="e#59973#60010#0" expanded="true" />
+            <element signature="e#60236#60269#0" expanded="true" />
+            <element signature="e#60495#60528#0" expanded="true" />
+            <element signature="e#60756#60791#0" expanded="true" />
+            <element signature="e#61086#61116#0" expanded="true" />
+            <element signature="e#62072#62103#0" expanded="true" />
+            <element signature="e#63367#63400#0" expanded="true" />
+            <element signature="e#63885#63910#0" expanded="true" />
+            <element signature="e#64340#64365#0" expanded="true" />
+            <element signature="e#65068#65101#0" expanded="true" />
+            <element signature="e#65175#65207#0" expanded="true" />
+            <element signature="e#65329#65369#0" expanded="true" />
+            <element signature="e#65406#65473#0" expanded="true" />
+            <element signature="e#65650#65680#0" expanded="true" />
+            <element signature="e#65793#65825#0" expanded="true" />
+            <element signature="e#65993#66033#0" expanded="true" />
+            <element signature="e#66109#66212#0" expanded="true" />
+            <element signature="e#66376#66410#0" expanded="true" />
+            <element signature="e#66519#66559#0" expanded="true" />
+            <element signature="e#66596#66663#0" expanded="true" />
+            <element signature="e#66737#66775#0" expanded="true" />
+            <element signature="e#66888#66928#0" expanded="true" />
+            <element signature="e#66965#67032#0" expanded="true" />
+            <element signature="e#67106#67142#0" expanded="true" />
+            <element signature="e#67253#67293#0" expanded="true" />
+            <element signature="e#67330#67397#0" expanded="true" />
+            <element signature="e#67471#67506#0" expanded="true" />
+            <element signature="e#67616#67656#0" expanded="true" />
+            <element signature="e#67693#67760#0" expanded="true" />
+            <element signature="e#67834#67862#0" expanded="true" />
+            <element signature="e#67963#68003#0" expanded="true" />
+            <element signature="e#68040#68107#0" expanded="true" />
+            <element signature="e#68110#68150#0" expanded="true" />
+            <element signature="e#68224#68255#0" expanded="true" />
+            <element signature="e#68435#68468#0" expanded="true" />
+            <element signature="e#68529#68569#0" expanded="true" />
+            <element signature="e#68767#68796#0" expanded="true" />
+            <element signature="e#68947#68984#0" expanded="true" />
+            <element signature="e#69228#69261#0" expanded="true" />
+            <element signature="e#69505#69538#0" expanded="true" />
+            <element signature="e#69784#69819#0" expanded="true" />
+            <element signature="e#70093#70123#0" expanded="true" />
+            <element signature="e#70232#70262#0" expanded="true" />
+            <element signature="e#70379#70408#0" expanded="true" />
+            <element signature="e#70525#70556#0" expanded="true" />
+            <element signature="e#70673#70700#0" expanded="true" />
+            <element signature="e#70817#70845#0" expanded="true" />
+            <element signature="e#71899#71930#0" expanded="true" />
+            <element signature="e#72039#72071#0" expanded="true" />
+            <element signature="e#72188#72213#0" expanded="true" />
+            <element signature="e#72330#72361#0" expanded="true" />
+            <element signature="e#72478#72509#0" expanded="true" />
+            <element signature="e#73766#73799#0" expanded="true" />
+            <element signature="e#74287#74312#0" expanded="true" />
+            <element signature="e#74733#74758#0" expanded="true" />
+            <element signature="e#77922#78124#0" expanded="true" />
+            <element signature="e#77970#78008#0" expanded="true" />
+            <element signature="e#78142#78178#0" expanded="true" />
+            <element signature="e#78271#78306#0" expanded="true" />
+            <element signature="e#78403#78440#0" expanded="true" />
+            <element signature="e#78539#78574#0" expanded="true" />
+            <element signature="e#78671#78708#0" expanded="true" />
+            <element signature="e#78815#78850#0" expanded="true" />
+            <element signature="e#78949#78985#0" expanded="true" />
+            <element signature="e#80583#80805#0" expanded="true" />
+            <element signature="e#80642#80678#0" expanded="true" />
+            <element signature="e#80928#80969#0" expanded="true" />
+            <element signature="e#81069#81105#0" expanded="true" />
+            <element signature="e#81296#81331#0" expanded="true" />
+            <element signature="e#81521#81558#0" expanded="true" />
+            <element signature="e#81750#81785#0" expanded="true" />
+            <element signature="e#81975#82012#0" expanded="true" />
+            <element signature="e#82212#82247#0" expanded="true" />
+            <element signature="e#82439#82475#0" expanded="true" />
+            <element signature="e#82757#82798#0" expanded="true" />
+            <element signature="e#87312#87606#0" expanded="true" />
+            <element signature="e#87600#87601#0" expanded="true" />
+            <element signature="e#88057#88350#0" expanded="true" />
+            <element signature="e#88342#88343#0" expanded="true" />
+            <element signature="e#88491#88507#0" expanded="true" />
+            <element signature="e#88524#88542#0" expanded="true" />
+            <element signature="e#89350#89370#0" expanded="true" />
+            <element signature="e#90022#90041#0" expanded="true" />
+            <element signature="e#90244#90267#0" expanded="true" />
+            <element signature="e#90428#90448#0" expanded="true" />
+            <element signature="e#90605#90627#0" expanded="true" />
+            <element signature="e#90791#90817#0" expanded="true" />
+            <element signature="e#90847#90877#0" expanded="true" />
+            <element signature="e#90973#90995#0" expanded="true" />
+            <element signature="e#91181#91204#0" expanded="true" />
+            <element signature="e#91232#91259#0" expanded="true" />
+            <element signature="e#91431#91454#0" expanded="true" />
+            <element signature="e#91482#91509#0" expanded="true" />
+            <element signature="e#91682#91701#0" expanded="true" />
+            <element signature="e#91729#91752#0" expanded="true" />
+            <element signature="e#92471#92484#0" expanded="true" />
+            <element signature="e#92831#92853#0" expanded="true" />
+            <element signature="e#93122#93155#0" expanded="true" />
+            <element signature="e#93206#93236#0" expanded="true" />
+            <element signature="e#93276#93306#0" expanded="true" />
+            <element signature="e#93346#93377#0" expanded="true" />
+            <element signature="e#93417#93450#0" expanded="true" />
+            <element signature="e#94736#95145#0" expanded="true" />
+            <element signature="e#95138#95139#0" expanded="true" />
+            <element signature="e#95194#95216#0" expanded="true" />
+            <element signature="e#95686#96393#0" expanded="true" />
+            <element signature="e#96374#96375#0" expanded="true" />
+            <element signature="e#96454#96477#0" expanded="true" />
+            <element signature="e#96888#97093#0" expanded="true" />
+            <element signature="e#97086#97087#0" expanded="true" />
+            <element signature="e#97142#97162#0" expanded="true" />
+            <element signature="e#97190#97204#0" expanded="true" />
+            <element signature="e#97270#97303#0" expanded="true" />
+            <element signature="e#97313#97343#0" expanded="true" />
+            <element signature="e#97353#97383#0" expanded="true" />
+            <element signature="e#97393#97424#0" expanded="true" />
+            <element signature="e#97434#97467#0" expanded="true" />
+            <element signature="e#98050#99663#0" expanded="true" />
+            <element signature="e#99624#99647#0" expanded="true" />
+            <element signature="e#99656#99657#0" expanded="true" />
+            <element signature="e#99713#99890#0" expanded="true" />
+            <element signature="e#99883#99884#0" expanded="true" />
+            <element signature="e#99939#99955#0" expanded="true" />
+            <element signature="e#100130#100167#0" expanded="true" />
+            <element signature="e#100177#100207#0" expanded="true" />
+            <element signature="e#100217#100255#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
